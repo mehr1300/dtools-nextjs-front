@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react';
 import {Dana} from "@/app/layout";
-import Convert from "@/components/zero-width-space-remover/Convert";
+import ZeroWidthSpaceRemover from "@/components/functions/ZeroWidthSpaceRemover";
 export const metadata = {
     title: "ابزار حذف نیم‌فاصله - پاکسازی سریع متن",
     description: "ابزار آنلاین حذف نیم‌فاصله (Zero-Width Space) برای پاکسازی سریع و آسان متن با رابط کاربری ساده و کارآمد.",
@@ -14,7 +14,7 @@ const Page = () => {
             <div className="flex flex-col gap-6 justify-center items-center px-10 md:px-60 py-10 container">
                 <h1 className={`${Dana.className} text-2xl font-bold`}>ابزار حذف نیم‌فاصله از متن</h1>
                 <div className="flex flex-row w-full  justify-center items-center ">
-                    <Convert/>
+                    <ZeroWidthSpaceRemover/>
                 </div>
                 <div className="flex flex-col gap-2">
                     <h2 className="font-bold text-justify">ابزار حذف نیم‌فاصله از متن</h2>

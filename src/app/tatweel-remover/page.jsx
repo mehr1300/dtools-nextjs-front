@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react';
 import {Dana} from "@/app/layout";
-import Convert from "@/components/tatweel-remover/Convert";
+import TatweelRemover from "@/components/functions/TatweelRemover";
 
 export const metadata = {
     title: "ابزار رفع کشیدگی متن - پاکسازی سریع متن",
@@ -15,7 +15,7 @@ const Page = () => {
             <div className="flex flex-col gap-6 justify-center items-center px-10 md:px-60 py-10 container">
                 <h1 className={`${Dana.className} text-2xl font-bold`}>ابزار رفع کشیدگی متن</h1>
                 <div className="flex flex-row w-full  justify-center items-center ">
-                    <Convert/>
+                    <TatweelRemover/>
                 </div>
                 <div className="flex flex-col gap-2">
                     <h2 className="font-bold text-justify">ابزار رفع کشیدگی متن</h2>

@@ -1,9 +1,9 @@
 import React, {Suspense} from 'react';
 import {Dana} from "@/app/layout";
-import ConvertArabicCharactersToPersian from "@/components/functions/ConvertArabicCharactersToPersian";
+import ConvertPersianCharactersToArabic from "@/components/functions/ConvertPersianCharactersToArabic";
 
 export const metadata = {
-    title: "تبدیل کارکتر های عربی به فارسی",
+    title: "تبدیل کارکتر های فارسی به عربی",
     description: "ابزار آنلاین تبدیل کاراکترهای فارسی به عربی با دقت بالا. متن فارسی خود را وارد کنید و به راحتی به عربی تبدیل کنید. مناسب برای سئو و تولید محتوا.",
 };
 const Page = () => {
@@ -12,7 +12,7 @@ const Page = () => {
             <div className="flex flex-col gap-6 justify-center items-center px-10 md:px-60 py-10 container">
                 <h1 className={`${Dana.className} text-2xl font-bold`}>ابزار تبدیل کاراکترهای فارسی به عربی</h1>
                 <div className="flex flex-row w-full  justify-center items-center ">
-                    <ConvertArabicCharactersToPersian/>
+                    <ConvertPersianCharactersToArabic/>
                 </div>
                 <div className="flex flex-col gap-2">
                     <h2 className="font-bold text-justify">ابزار تبدیل کاراکترهای فارسی به عربی</h2>

@@ -1,15 +1,15 @@
 "use client"
 import React, {useState} from 'react';
-import {removeTatweel} from "@/utility/functions";
+import {removeZeroWidthSpaces} from "@/utility/functions";
 import {LuCopy} from "react-icons/lu";
 import {Toast} from "@/components/toast/Toast";
 
-const Convert = () => {
+const ZeroWidthSpaceRemover = () => {
     const [textOne, setTextOne] = useState("")
     const [textTwo, setTextTwo] = useState("")
 
     const onSubmit = () => {
-       setTextTwo(removeTatweel(textOne))
+       setTextTwo(removeZeroWidthSpaces(textOne))
     }
 
     const copyToClipboard = async () => {
@@ -51,4 +51,4 @@ const Convert = () => {
     );
 };
 
-export default Convert;
+export default ZeroWidthSpaceRemover;

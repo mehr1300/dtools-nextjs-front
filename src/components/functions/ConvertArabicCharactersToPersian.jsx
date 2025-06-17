@@ -4,7 +4,7 @@ import {persianToArabic} from "@/utility/functions";
 import {LuCopy} from "react-icons/lu";
 import {Toast} from "@/components/toast/Toast";
 
-const Convert = () => {
+const ConvertArabicCharactersToPersian = () => {
     const [textOne, setTextOne] = useState("")
     const [textTwo, setTextTwo] = useState("")
 
@@ -51,4 +51,4 @@ const Convert = () => {
     );
 };
 
-export default Convert;
+export default ConvertArabicCharactersToPersian;
