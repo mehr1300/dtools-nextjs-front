@@ -1,15 +1,36 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+import ToastContainer from "@/components/toast/ToastContainer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+export const IRANSansXFaNum = localFont({
+    src: [
+        {
+            path: '../assets/fonts/IranSansxFaNum/Woff2/IRANSansXFaNum-Regular.woff2',
+            weight: 'normal',
+            style: 'normal',
+        },
+        {
+            path: '../assets/fonts/IranSansxFaNum/Woff2/IRANSansXFaNum-Bold.woff2',
+            weight: 'bold',
+            style: 'normal',
+        },
+    ],
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export const Dana = localFont({
+    src: [
+        {
+            path: '../assets/fonts/Dana/Woff2/DanaFaNum-Regular.woff2',
+            weight: 'normal',
+            style: 'normal',
+        },
+        {
+            path: '../assets/fonts/Dana/Woff2/DanaFaNum-Bold.woff2',
+            weight: 'bold',
+            style: 'normal',
+        },
+    ],
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -18,11 +39,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" dir="rtl">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${IRANSansXFaNum.className} `}
       >
         {children}
+        <ToastContainer/>
       </body>
     </html>
   );
