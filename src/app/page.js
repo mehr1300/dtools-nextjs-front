@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import {TbExchange} from "react-icons/tb";
+import IndexHead from "@/components/pages/IndexHead";
 
 export const metadata = {
   title: "ابزارهای رایگان ویرایش متن فارسی در Dtools | تبدیل، اصلاح و بهینه‌سازی",
@@ -16,10 +17,7 @@ const Page = () => {
                 </div>
             </nav>
             <div className={`flex flex-col gap-20 max-w-screen mx-auto w-full items-center justify-center`}>
-                <div className={`flex flex-col gap-10`}>
-                    <h1 className={`font-bold text-gray-800 text-5xl`}>ابزارهای رایگان ویرایش و پردازش متن فارسی</h1>
-                    <h2 className={`text-gray-500`}>به سادگی متن‌های فارسی خود را ویرایش و بهینه کنید. همه‌چیز رایگان، سریع و با کیفیت حرفه‌ای در دسترس شماست.</h2>
-                </div>
+                <IndexHead/>
                 <div className="grid grid-cols-2 gap-4">
                     <div>
                         <div className={`bg-blue-400 flex flex-col gap-5 rounded-t-xl w-80 h-45 p-5`}>
