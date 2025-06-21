@@ -110,10 +110,10 @@ const IndexHead = () => {
                         }
                     }
                     return (
-                        <div key={index} className={`absolute ${b} anime_hover duration-500 flex flex-row gap-8`}>
+                        <div key={index} className={`absolute ${b} anime_hover duration-500 flex flex-row px-2 gap-6`}>
                             {value.item?.map((value, index) => {
                                 return (
-                                    <div key={index} className={`shadow rounded-xl shadow-sky-300 drop-shadow drop-shadow-red-300 flex flex-col`}>
+                                    <div key={index} className={`rounded-xl drop-shadow-sm ${value.dropShadow} flex flex-col`}>
                                         <div className={`${value.color1} bg-[url('/box.png')] bg-blend-overlay flex flex-col gap-5 rounded-t-xl w-80 h-45 p-5`}>
                                             <div className={`size-11 flex-shrink-0 flex items-center justify-center rounded-full bg-white/40 text-white`}>{value.icon}</div>
                                             <div className={`flex flex-col gap-2`}>

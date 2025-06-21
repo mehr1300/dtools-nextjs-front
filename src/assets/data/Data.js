@@ -1,5 +1,6 @@
 import {TbExchange} from "react-icons/tb";
 import React from "react";
+import {BiCandles, BiCut} from "react-icons/bi";
 
 export const indexHead = [
     {
@@ -16,6 +17,7 @@ export const indexHead = [
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
                 icon : <TbExchange size={30}/>,
+                dropShadow : "drop-shadow-emerald-200",
             },
             {
                 title : "ابزار حذف نیم‌فاصله از متن",
@@ -24,7 +26,8 @@ export const indexHead = [
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiCut size={30}/>,
+                dropShadow : "drop-shadow-emerald-200",
             },
             {
                 title : "ابزار رفع کشیدگی متن",
@@ -33,7 +36,8 @@ export const indexHead = [
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiCandles size={30}/>,
+                dropShadow : "drop-shadow-emerald-200",
             },
         ]
     },
@@ -51,6 +55,7 @@ export const indexHead = [
                 color2 : "bg-rose-50",
                 textColor1 : "text-rose-500",
                 icon : <TbExchange size={30}/>,
+                dropShadow : "drop-shadow-rose-200",
             },
             {
                 title : "ابزار حذف نیم‌فاصله از متن",
@@ -60,6 +65,7 @@ export const indexHead = [
                 color2 : "bg-rose-50",
                 textColor1 : "text-rose-500",
                 icon : <TbExchange size={30}/>,
+                dropShadow : "drop-shadow-rose-200",
             },
             {
                 title : "ابزار رفع کشیدگی متن",
@@ -69,6 +75,7 @@ export const indexHead = [
                 color2 : "bg-rose-50",
                 textColor1 : "text-rose-500",
                 icon : <TbExchange size={30}/>,
+                dropShadow : "drop-shadow-rose-200",
             },
         ]
     },
@@ -86,6 +93,7 @@ export const indexHead = [
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
                 icon : <TbExchange size={30}/>,
+                dropShadow : "drop-shadow-cyan-200",
             },
             {
                 title : "ابزار حذف نیم‌فاصله از متن",
@@ -95,6 +103,7 @@ export const indexHead = [
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
                 icon : <TbExchange size={30}/>,
+                dropShadow : "drop-shadow-cyan-200",
             },
             {
                 title : "ابزار رفع کشیدگی متن",
@@ -104,6 +113,7 @@ export const indexHead = [
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
                 icon : <TbExchange size={30}/>,
+                dropShadow : "drop-shadow-cyan-200",
             },
         ]
     },
