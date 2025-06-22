@@ -1,5 +1,4 @@
-import React, {Suspense} from 'react';
-import {Dana} from "@/app/layout";
+import React from 'react';
 import TatweelRemover from "@/components/functions/TatweelRemover";
 
 export const metadata = {
@@ -13,7 +12,7 @@ const Page = () => {
     return (
         <div className="flex flex-col justify-center items-center  ">
             <div className="flex flex-col gap-6 justify-center items-center px-10 md:px-60 py-10 container">
-                <h1 className={`${Dana.className} text-2xl font-bold`}>ابزار رفع کشیدگی متن</h1>
+                <h1 className={`text-2xl font-bold`}>ابزار رفع کشیدگی متن</h1>
                 <div className="flex flex-row w-full  justify-center items-center ">
                     <TatweelRemover/>
                 </div>
