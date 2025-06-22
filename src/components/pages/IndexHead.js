@@ -86,7 +86,7 @@ const IndexHead = () => {
                     <span>همه‌چیز رایگان، سریع و با کیفیت و حرفه‌ای در دسترس شماست.</span>
                 </h2>
             </div>
-            <div className={`relative h-120 w-full overflow-hidden max-w-screen-lg mx-auto flex flex-row`}>
+            <div className={`relative min-h-150 w-full overflow-hidden max-w-screen-lg mx-auto flex flex-row`}>
                 {indexHead.map((value, index) => {
                     if(number === index){
                         b = 'translate-x-0 z-20'
@@ -110,7 +110,7 @@ const IndexHead = () => {
                         }
                     }
                     return (
-                        <div key={index} className={`absolute ${b} anime_hover duration-500 flex flex-row px-2 gap-6`}>
+                        <div key={index} className={`absolute ${b} anime_hover duration-500 grid grid-cols-3 px-2 gap-6`}>
                             {value.item?.map((value, index) => {
                                 return (
                                     <div key={index} className={`rounded-xl drop-shadow-sm ${value.dropShadow} flex flex-col`}>
