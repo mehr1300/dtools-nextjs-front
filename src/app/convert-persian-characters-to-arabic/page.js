@@ -5,6 +5,7 @@ export const metadata = {
     title: "تبدیل کارکتر های عربی به فارسی",
     description: "ابزار آنلاین تبدیل کاراکترهای فارسی به عربی با دقت بالا. متن فارسی خود را وارد کنید و به راحتی به عربی تبدیل کنید. مناسب برای سئو و تولید محتوا.",
 };
+
 const Page = () => {
     return (
         <div className="flex flex-col justify-center items-center  ">

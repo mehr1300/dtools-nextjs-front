@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react';
 import ZeroWidthSpaceRemover from "@/components/functions/ZeroWidthSpaceRemover";
+
 export const metadata = {
     title: "ابزار حذف نیم‌فاصله - پاکسازی سریع متن",
     description: "ابزار آنلاین حذف نیم‌فاصله (Zero-Width Space) برای پاکسازی سریع و آسان متن با رابط کاربری ساده و کارآمد.",
@@ -7,6 +8,7 @@ export const metadata = {
     robots: "index, follow",
     keywords: "حذف نیم‌فاصله, ابزار پاکسازی متن, نیم‌فاصله, zero-width space remover, ابزار آنلاین متن",
 };
+
 const Page = () => {
     return (
         <div className="flex flex-col justify-center items-center  ">

@@ -8,6 +8,7 @@ export const metadata = {
     robots: "index, follow",
     keywords: "تبدیل متن, ابزار تبدیل متن, حروف بزرگ, حروف کوچک, snake case, text transformer",
 };
+
 const Page = () => {
     return (
         <div className="flex flex-col justify-center items-center  ">

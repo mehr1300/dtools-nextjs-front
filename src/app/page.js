@@ -49,17 +49,7 @@ const Page = () => {
             <div className={`bg-white rounded-t-3xl pb-30 -mt-5 pt-20 px-10`}>
                 <div className={`mx-auto max-w-screen-xl w-full flex flex-col gap-12`}>
                     <div className={`flex flex-col text-center gap-5`}>
-                        <div className={`${Kalameh.className} mx-auto text_icon gap-4 text-2xl font-bold text-gray-800`}>
-                            <div className={`flex-shrink-0 flex flex-row gap-1 items-center`}>
-                                <div className={`size-2 rounded bg-sky-300 `}></div>
-                                <div className={`size-3 rounded bg-sky-500 `}></div>
-                            </div>
-                            <h3>ابزارهای محبوب Dtools</h3>
-                            <div className={`flex-shrink-0 flex flex-row gap-1 items-center`}>
-                                <div className={`size-3 rounded bg-sky-500 `}></div>
-                                <div className={`size-2 rounded bg-sky-300 `}></div>
-                            </div>
-                        </div>
+                        <h3 className={`${Kalameh.className} text-2xl font-bold text-gray-800`}>ابزارهای محبوب Dtools</h3>
                         <p className={`text-gray-500`}>در Dtools از بهترین ابزارها به راحتی و رایگان استفاده کنید.</p>
                     </div>
                     <IndexItems/>

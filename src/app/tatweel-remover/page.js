@@ -8,6 +8,7 @@ export const metadata = {
     robots: "index, follow",
     keywords: "رفع کشیدگی متن, ابزار پاکسازی متن, حذف کشیدگی, tatweel remover, ابزار آنلاین متن",
 };
+
 const Page = () => {
     return (
         <div className="flex flex-col justify-center items-center  ">

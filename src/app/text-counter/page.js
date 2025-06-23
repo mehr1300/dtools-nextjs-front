@@ -8,6 +8,7 @@ export const metadata = {
     robots: "index, follow",
     keywords: "شمارش متن, ابزار شمارش کاراکتر, تعداد کلمه, تعداد فاصله, text counter, ابزار آنلاین متن",
 };
+
 const Page = () => {
     return (
         <div className="flex flex-col justify-center items-center  ">
