@@ -1,6 +1,8 @@
 import {TbExchange} from "react-icons/tb";
 import React from "react";
-import {BiCandles, BiCut} from "react-icons/bi";
+import {BiCandles, BiCodeAlt, BiCodeBlock, BiLogoJavascript, BiLogoTailwindCss, BiMath, BiQrScan, BiSolidCalculator, BiSolidCalendarAlt, BiSolidCalendarEdit, BiSolidCreditCardFront, BiSolidDetail, BiSolidEdit, BiSolidEraser, BiSolidGame, BiSolidGrid, BiSolidJoystick, BiSolidNotepad, BiSolidUserDetail, BiSync} from "react-icons/bi";
+import {PiCoinVerticalFill} from "react-icons/pi";
+import {RiCompassFill} from "react-icons/ri";
 
 export const indexHead = [
     {
@@ -8,10 +10,11 @@ export const indexHead = [
         description : "متون خود را ویرایش و بهینه کنید.",
         hover : "hover:bg-emerald-600",
         border : "border-emerald-600",
-        color1 : "bg-emerald-600",
+        color1 : "bg-gradient-to-bl from-emerald-400 to-emerald-600",
         color2 : "bg-emerald-100",
         color3 : "bg-emerald-100/60",
         textColor : "text-emerald-600",
+        icon : <BiSolidEdit size={26}/>,
         item : [
             {
                 title : "تبدیل کارکتر های فارسی به عربی",
@@ -20,7 +23,7 @@ export const indexHead = [
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
-                icon : <TbExchange size={30}/>,
+                icon : <TbExchange size={24}/>,
                 dropShadow : "drop-shadow-emerald-200",
             },
             {
@@ -30,7 +33,7 @@ export const indexHead = [
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
-                icon : <TbExchange size={30}/>,
+                icon : <TbExchange className={` rotate-270 `} size={24}/>,
                 dropShadow : "drop-shadow-emerald-200",
             },
              {
@@ -40,7 +43,7 @@ export const indexHead = [
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiMath size={24}/>,
                 dropShadow : "drop-shadow-emerald-200",
             },
             {
@@ -50,7 +53,7 @@ export const indexHead = [
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
-                icon : <BiCut size={30}/>,
+                icon : <BiSolidEraser size={30}/>,
                 dropShadow : "drop-shadow-emerald-200",
             },
             {
@@ -70,7 +73,7 @@ export const indexHead = [
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
-                icon : <BiCandles size={30}/>,
+                icon : <BiSolidGrid size={30}/>,
                 dropShadow : "drop-shadow-emerald-200",
             },
         ]
@@ -80,10 +83,11 @@ export const indexHead = [
         description : "داده ها را بسازید و اصلاح کنید.",
         hover : "hover:bg-fuchsia-600",
         border : "border-fuchsia-600",
-        color1 : "bg-fuchsia-600",
-        color2 : "bg-fuchsia-100",
+        color1 : "bg-gradient-to-bl from-fuchsia-400 to-fuchsia-600",
+        color2 : "bg-fuchsia-200",
         color3 : "bg-fuchsia-100/60",
         textColor : "text-fuchsia-600",
+        icon : <BiCodeBlock size={26}/>,
         item : [
             {
                 title : "تولید کد ملی",
@@ -92,7 +96,7 @@ export const indexHead = [
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidCreditCardFront size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
@@ -102,7 +106,7 @@ export const indexHead = [
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidUserDetail size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
@@ -112,7 +116,7 @@ export const indexHead = [
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiCodeAlt size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
@@ -122,7 +126,7 @@ export const indexHead = [
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <TbExchange size={30}/>,
+                icon : <TbExchange className={` rotate-270 `} size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
@@ -132,7 +136,7 @@ export const indexHead = [
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSync size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
@@ -142,7 +146,7 @@ export const indexHead = [
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidDetail size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
@@ -152,7 +156,7 @@ export const indexHead = [
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiQrScan size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
@@ -162,7 +166,7 @@ export const indexHead = [
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiLogoTailwindCss size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
              {
@@ -172,7 +176,7 @@ export const indexHead = [
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiLogoJavascript size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
 
@@ -183,10 +187,11 @@ export const indexHead = [
         description : "آنلاین هرچیزی را محاسبه کنید.",
         hover : "hover:bg-cyan-600",
         border : "border-cyan-600",
-        color1 : "bg-cyan-600",
+        color1 : "bg-gradient-to-bl from-cyan-400 to-cyan-600",
         color2 : "bg-cyan-100",
         color3 : "bg-cyan-100/60",
         textColor : "text-cyan-600",
+        icon : <BiSolidCalculator size={26}/>,
         item : [
             {
                 title : "تقویم",
@@ -195,7 +200,7 @@ export const indexHead = [
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidCalendarAlt size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
             {
@@ -205,7 +210,7 @@ export const indexHead = [
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidCalendarEdit size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
             {
@@ -215,7 +220,7 @@ export const indexHead = [
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidCalculator size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
             {
@@ -225,7 +230,7 @@ export const indexHead = [
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidCalculator size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
             {
@@ -235,7 +240,7 @@ export const indexHead = [
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidCalculator size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
             {
@@ -245,17 +250,17 @@ export const indexHead = [
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
-                icon : <TbExchange size={30}/>,
+                icon : <TbExchange size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
              {
-                title : "تخته وایت برد",
+                title : "یادداشت",
                 description : "تخته وایت برد آنلاین",
                 link : "/tatweel-remover",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidNotepad size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
              {
@@ -265,7 +270,7 @@ export const indexHead = [
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
-                icon : <TbExchange size={30}/>,
+                icon : <BiSolidCalculator size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
         ]
@@ -275,10 +280,11 @@ export const indexHead = [
         description : "از اوقات فراغت خود لذت ببرید.",
         hover : "hover:bg-amber-600",
         border : "border-amber-600",
-        color1 : "bg-amber-600",
+        color1 : "bg-gradient-to-bl from-amber-400 to-amber-600",
         color2 : "bg-amber-100",
         color3 : "bg-amber-100/60",
         textColor : "text-amber-600",
+        icon : <BiSolidJoystick size={26}/>,
         item : [
             {
                 title : "قرعه کشی",
@@ -287,7 +293,8 @@ export const indexHead = [
                 color1 : "bg-amber-500",
                 color2 : "bg-amber-50",
                 textColor1 : "text-amber-500",
-                icon : <TbExchange size={30}/>,
+                textColor2 : "text-indigo-500",
+                icon : <RiCompassFill size={26}/>,
                 dropShadow : "drop-shadow-amber-200",
             },
             {
@@ -295,9 +302,10 @@ export const indexHead = [
                 description : "بازی جاسوس آنلاین براساس تعداد",
                 link : "/tatweel-remover",
                 color1 : "bg-amber-500",
-                color2 : "bg-amber-50",
-                textColor1 : "text-amber-500",
-                icon : <TbExchange size={30}/>,
+                color2 : "bg-red-50",
+                textColor1 : "text-red-500",
+                textColor2 : "text-lime-500",
+                icon : <BiSolidGame size={24}/>,
                 dropShadow : "drop-shadow-amber-200",
             },
             {
@@ -305,9 +313,10 @@ export const indexHead = [
                 description : "راهنمای بازی اسم و فامیل",
                 link : "/tatweel-remover",
                 color1 : "bg-amber-500",
-                color2 : "bg-amber-50",
-                textColor1 : "text-amber-500",
-                icon : <TbExchange size={30}/>,
+                color2 : "bg-blue-50",
+                textColor1 : "text-blue-500",
+                textColor2 : "text-red-500",
+                icon : <BiSolidDetail size={24}/>,
                 dropShadow : "drop-shadow-amber-200",
             },
             {
@@ -315,9 +324,10 @@ export const indexHead = [
                 description : "کلمات، جملات،ضرب المثل و ... برای بازی پانتومیم",
                 link : "/tatweel-remover",
                 color1 : "bg-amber-500",
-                color2 : "bg-amber-50",
-                textColor1 : "text-amber-500",
-                icon : <TbExchange size={30}/>,
+                color2 : "bg-green-50",
+                textColor1 : "text-green-500",
+                textColor2 : "text-cyan-500",
+                icon : <BiSolidGame size={24}/>,
                 dropShadow : "drop-shadow-amber-200",
             },
             {
@@ -325,9 +335,10 @@ export const indexHead = [
                 description : "شیر یا خط به صورت آنلاین",
                 link : "/tatweel-remover",
                 color1 : "bg-amber-500",
-                color2 : "bg-amber-50",
-                textColor1 : "text-amber-500",
-                icon : <TbExchange size={30}/>,
+                color2 : "bg-purple-50",
+                textColor1 : "text-purple-500",
+                textColor2 : "text-red-500",
+                icon : <PiCoinVerticalFill size={24}/>,
                 dropShadow : "drop-shadow-amber-200",
             },
         ]

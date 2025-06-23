@@ -77,7 +77,7 @@ const IndexHead = () => {
                                 }
                             }
                             return (
-                                <span key={index} className={`w-65 absolute anime_hover ${value.color2} duration-500 ${a} text-center p-2`}>{value.description}</span>
+                                <span key={index} className={`w-65 absolute anime_hover text-gray-600 ${value.color2} duration-500 ${a} text-center p-2`}>{value.description}</span>
                             )
                         })}
                     </span>

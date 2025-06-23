@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import ToastContainer from "@/components/toast/ToastContainer";
 import Navbar from "@/components/pages/Navbar";
+import Footer from "@/components/pages/Footer";
 
 export const Pelak = localFont({
     src: [
@@ -69,9 +70,10 @@ export const Kalameh = localFont({
 export default function RootLayout({ children }) {
     return (
         <html lang="fa" dir="rtl">
-            <body className={`min-h-[100svh] selection:bg-lime-600 selection:text-white bg-gray-100 flex flex-col gap-20 ${Pelak.className} `}>
+            <body className={`min-h-[100svh] selection:bg-sky-300 selection:text-white flex flex-col ${Pelak.className} `}>
                 <Navbar/>
                 {children}
+                <Footer/>
                 <ToastContainer/>
             </body>
         </html>
