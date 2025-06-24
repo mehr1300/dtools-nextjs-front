@@ -4,6 +4,7 @@ import {IRANYekanFaNum, Kalameh} from "@/app/layout";
 import {indexHead} from "@/assets/data/Data";
 import IndexItems from "@/components/pages/IndexItems";
 import {GoArrowLeft} from "react-icons/go";
+import Link from "next/link";
 
 export const metadata = {
   title: "ابزارهای رایگان ویرایش متن فارسی در Dtools | تبدیل، اصلاح و بهینه‌سازی",
@@ -38,7 +39,7 @@ const Page = () => {
                                 <div className={`bg-white rounded-b-xl h-16 py-3 px-4 w-70`}>
                                     <div className={` ${value.color3} text_icon justify-between px-5 rounded-xl size-full`}>
                                         <span className={`text-gray-500 flex-shrink-0 text-sm`}>ابزار ویژه :</span>
-                                        <span className={` ${value.textColor} text-sm line-clamp-1`}>{value.item[0].title}</span>
+                                        <Link href={value.item[0].link} className={` ${value.textColor} text-sm line-clamp-1`}>{value.item[0].title}</Link>
                                     </div>
                                 </div>
                             </div>

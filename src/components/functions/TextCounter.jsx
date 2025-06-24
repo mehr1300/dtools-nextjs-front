@@ -1,10 +1,9 @@
 "use client"
 import React, {useEffect, useState} from 'react';
-import {removeTatweel} from "@/utility/functions";
-import {LuCopy} from "react-icons/lu";
-import {Toast} from "@/components/toast/Toast";
+import {IRANYekanFaNum} from "@/app/layout";
 
 const TextCounter = () => {
+
     const [textOne, setTextOne] = useState("")
     const [charCountWithSpaces, setCharCountWithSpaces] = useState(0);
     const [charCountWithoutSpaces, setCharCountWithoutSpaces] = useState(0);
@@ -12,7 +11,6 @@ const TextCounter = () => {
     const [spaceCount, setSpaceCount] = useState(0);
     const [sentenceCount, setSentenceCount] = useState(0);
     const [paragraphCount, setParagraphCount] = useState(0);
-
     useEffect(() => {
         setCharCountWithSpaces(textOne.length);
         setCharCountWithoutSpaces(textOne.replace(/\s/g, '').length);
@@ -23,48 +21,42 @@ const TextCounter = () => {
 
     }, [textOne]);
 
-
-
-
     return (
-        <div className="flex flex-col gap-5 justify-center items-center">
-            <div className="grid grid-cols-1  gap-3">
-                <div className="flex flex-col">
-                    <label className="flex flex-row gap-1" htmlFor="textOne">
-                        <span>متن را وارد کنید</span>
-                        <span className="text-sm text-gray-700"></span>
-                    </label>
-                    <textarea id="textOne" value={textOne} onChange={(e) => {setTextOne(e.target.value)}} name="" cols="125" rows="10" className="border border-gray-300 rounded-xl p-3 text-gray-700"></textarea>
-                </div>
+        <div className="flex flex-col gap-10 justify-center items-center">
+            <div className="flex flex-col gap-3 w-full">
+                <label className="flex flex-row gap-1" htmlFor="textOne">
+                    <span>متن را وارد کنید</span>
+                    <span className="text-sm text-gray-700"></span>
+                </label>
+                <textarea id="textOne" value={textOne} onChange={(e) => {setTextOne(e.target.value)}} name="" cols="125" rows="10" className="border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700"></textarea>
             </div>
             <div className=" flex flex-row gap-3">
-                <div className="flex flex-col text-sm gap-1  justify-center items-center bg-blue-500 text-white px-2 py-2 rounded">
-                    <span className="border-b border-blue-400 p-2">تعداد کارکتر+اسپیس</span>
-                    <span>{charCountWithSpaces}</span>
+                <div className="flex flex-col text-sm gap-1 justify-center items-center bg-sky-400 text-white px-2 py-2 rounded">
+                    <span className="border-b border-gray-200 p-2">تعداد کارکتر + اسپیس</span>
+                    <span className={`${IRANYekanFaNum.className} text-lg`}>{charCountWithSpaces}</span>
                 </div>
-                <div className="flex flex-col text-sm gap-1  justify-center items-center bg-blue-500 text-white px-2 py-2 rounded">
-                    <span className="border-b border-blue-400 p-2">تعداد کارکتر+بدون اسپیس</span>
-                    <span>{charCountWithoutSpaces}</span>
+                <div className="flex flex-col text-sm gap-1 justify-center items-center bg-sky-400 text-white px-2 py-2 rounded">
+                    <span className="border-b border-gray-200 p-2">تعداد کارکتر بدون اسپیس</span>
+                    <span className={`${IRANYekanFaNum.className} text-lg`}>{charCountWithoutSpaces}</span>
                 </div>
-                <div className="flex flex-col text-sm gap-1  justify-center items-center bg-blue-500 text-white px-2 py-2 rounded">
-                    <span className="border-b border-blue-400 p-2">تعداد کلمه</span>
-                    <span>{wordCount}</span>
+                <div className="flex flex-col text-sm gap-1 justify-center items-center bg-sky-400 text-white px-2 py-2 rounded">
+                    <span className="border-b border-gray-200 p-2">تعداد کلمه</span>
+                    <span className={`${IRANYekanFaNum.className} text-lg`}>{wordCount}</span>
                 </div>
-                <div className="flex flex-col text-sm gap-1  justify-center items-center bg-blue-500 text-white px-2 py-2 rounded">
-                    <span className="border-b border-blue-400 p-2">تعداد اسپیس</span>
-                    <span>{spaceCount}</span>
+                <div className="flex flex-col text-sm gap-1 justify-center items-center bg-sky-400 text-white px-2 py-2 rounded">
+                    <span className="border-b border-gray-200 p-2">تعداد اسپیس</span>
+                    <span className={`${IRANYekanFaNum.className} text-lg`}>{spaceCount}</span>
                 </div>
-                <div className="flex flex-col text-sm gap-1  justify-center items-center bg-blue-500 text-white px-2 py-2 rounded">
-                    <span className="border-b border-blue-400 p-2">تعداد جمله</span>
-                    <span>{sentenceCount}</span>
+                <div className="flex flex-col text-sm gap-1 justify-center items-center bg-sky-400 text-white px-2 py-2 rounded">
+                    <span className="border-b border-gray-200 p-2">تعداد جمله</span>
+                    <span className={`${IRANYekanFaNum.className} text-lg`}>{sentenceCount}</span>
                 </div>
-                <div className="flex flex-col text-sm gap-1  justify-center items-center bg-blue-500 text-white px-2 py-2 rounded">
-                    <span className="border-b border-blue-400 p-2">تعداد پاراگراف</span>
-                    <span>{paragraphCount}</span>
+                <div className="flex flex-col text-sm gap-1 justify-center items-center bg-sky-400 text-white px-2 py-2 rounded">
+                    <span className="border-b border-gray-200 p-2">تعداد پاراگراف</span>
+                    <span className={`${IRANYekanFaNum.className} text-lg`}>{paragraphCount}</span>
                 </div>
             </div>
         </div>
-
     );
 };
 

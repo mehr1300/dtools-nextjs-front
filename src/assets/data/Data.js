@@ -29,7 +29,7 @@ export const indexHead = [
             {
                 title : "تبدیل کارکتر های عربی به فارسی",
                 description : "تغییر حروف در نوشته های عربی به حروف فارسی.",
-                link : "/convert-persian-characters-to-arabic",
+                link : "/convert-arabic-characters-to-persian",
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
@@ -39,7 +39,7 @@ export const indexHead = [
              {
                 title : "تبدیل اعداد",
                 description : "تبدیل اعداد فارسی و انگلیسی و عربی",
-                link : "/convert-arabic-characters-to-persian",
+                link : "/number-transformer",
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
@@ -69,7 +69,7 @@ export const indexHead = [
             {
                 title : "ابزار شمارشگر",
                 description : "شمارش تعداد کارکتر، جمله و فاصله بین کلمات",
-                link : "/tatweel-remover",
+                link : "/text-counter",
                 color1 : "bg-emerald-400",
                 color2 : "bg-emerald-50",
                 textColor1 : "text-emerald-500",
@@ -92,7 +92,7 @@ export const indexHead = [
             {
                 title : "تولید کد ملی",
                 description : "تولید کد ملی فیک برای تست برنامه ها",
-                link : "/national-code",
+                link : "/national-code-generator",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -102,7 +102,7 @@ export const indexHead = [
             {
                 title : "تولید اطلاعات هویتی",
                 description : "تولید اطلاعات هویتی فیک (کد ملی، شماره همراه ، تلفن ثابت و آدرس)",
-                link : "/national-code",
+                link : "/identity-generator",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -120,9 +120,9 @@ export const indexHead = [
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
-                title : "آرایه به json",
+                title : "تبدیل آرایه به json",
                 description : "تبدیل آرایه به جیسون(json)",
-                link : "/tatweel-remover",
+                link : "/convert-array-to-json",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -132,7 +132,7 @@ export const indexHead = [
             {
                 title : "decode و encode",
                 description : "دیکود (decode) و انکود (encode) | تبدیل رشته ها به کاکتر و برعکس",
-                link : "/tatweel-remover",
+                link : "/decode-encode",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -142,7 +142,7 @@ export const indexHead = [
             {
                 title : "متن تصادفی",
                 description : "تولید متن تصادفی",
-                link : "/tatweel-remover",
+                link : "/create-passage",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -152,7 +152,7 @@ export const indexHead = [
             {
                 title : "تولید QRCODE",
                 description : "تولید کیو آر کد",
-                link : "/tatweel-remover",
+                link : "/qr-code",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -162,7 +162,7 @@ export const indexHead = [
             {
                 title : "gradient in tailwind",
                 description : "ابزار تولید گرادیانت دلخواه در تیلویند",
-                link : "/tatweel-remover",
+                link : "/tailwind-gradient",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -172,7 +172,7 @@ export const indexHead = [
              {
                 title : "ویرایشگر (ادیتور) js آنلاین",
                 description : "js online editor",
-                link : "/tatweel-remover",
+                link : "/js-online",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -196,7 +196,7 @@ export const indexHead = [
             {
                 title : "تقویم",
                 description : "تقویم و تاریخ رویدادها و وقایع مهم",
-                link : "/convert-persian-characters-to-arabic",
+                link : "/",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -206,7 +206,7 @@ export const indexHead = [
             {
                 title : "تبدیل تاریخ",
                 description : "تبدیل تاریخ شمسی به میلادی و قمری و برعکس",
-                link : "/convert-persian-characters-to-arabic",
+                link : "/",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -216,7 +216,7 @@ export const indexHead = [
             {
                 title : "محاسبه قیمت طلا",
                 description : "محاسبه اجرت و قیمت نهایی خرید طلا",
-                link : "/zero-width-space-remover",
+                link : "/",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -226,7 +226,7 @@ export const indexHead = [
             {
                 title : "محاسبه سن",
                 description : "محاسبه سال، ماه، هفته و روز | سن شما",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -236,7 +236,7 @@ export const indexHead = [
             {
                 title : "محاسبه سود وام",
                 description : "محاسبه سود وام بانکی و تعداد اقساط",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -246,7 +246,7 @@ export const indexHead = [
             {
                 title : "تبدیل واحد",
                 description : "تبدیل واحد ها به هم",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -256,7 +256,7 @@ export const indexHead = [
              {
                 title : "یادداشت",
                 description : "تخته وایت برد آنلاین",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -266,7 +266,7 @@ export const indexHead = [
              {
                 title : "محاسبه معدل",
                 description : "محاسبه معدل دانش آموزان و دانشجویان",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -289,7 +289,7 @@ export const indexHead = [
             {
                 title : "قرعه کشی",
                 description : "قرعه کشی تصادفی براساس تعداد نفرات",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-amber-500",
                 color2 : "bg-amber-50",
                 textColor1 : "text-amber-500",
@@ -300,7 +300,7 @@ export const indexHead = [
             {
                 title : "جاسوس",
                 description : "بازی جاسوس آنلاین براساس تعداد",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-amber-500",
                 color2 : "bg-red-50",
                 textColor1 : "text-red-500",
@@ -311,7 +311,7 @@ export const indexHead = [
             {
                 title : "اسم و فامیل",
                 description : "راهنمای بازی اسم و فامیل",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-amber-500",
                 color2 : "bg-blue-50",
                 textColor1 : "text-blue-500",
@@ -322,7 +322,7 @@ export const indexHead = [
             {
                 title : "پانتومیم",
                 description : "کلمات، جملات،ضرب المثل و ... برای بازی پانتومیم",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-amber-500",
                 color2 : "bg-green-50",
                 textColor1 : "text-green-500",
@@ -333,7 +333,7 @@ export const indexHead = [
             {
                 title : "شیر یا خط",
                 description : "شیر یا خط به صورت آنلاین",
-                link : "/tatweel-remover",
+                link : "/",
                 color1 : "bg-amber-500",
                 color2 : "bg-purple-50",
                 textColor1 : "text-purple-500",

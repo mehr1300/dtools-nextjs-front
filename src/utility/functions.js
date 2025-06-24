@@ -44,18 +44,12 @@ export function persianToArabic(text) {
     // Convert each character using the mapping
     return text.split('').map(char => charMap[char] || char).join('');
 }
-
-
 export function removeZeroWidthSpaces(text) {
     return text.replace(/[\u200B-\u200D\uFEFF]/g, ' ');
 }
-
 export function removeTatweel(text) {
     return text.replace(/[\u0640]+/g, '');
 }
-
-
-
 export function transformText(text, transformType) {
     switch (transformType) {
         case 'uppercase':
