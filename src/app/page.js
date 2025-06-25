@@ -7,11 +7,25 @@ import {GoArrowLeft} from "react-icons/go";
 import Link from "next/link";
 
 export const metadata = {
-  title: "ابزارهای رایگان ویرایش متن فارسی در Dtools | تبدیل، اصلاح و بهینه‌سازی",
-  description: "ابزارهای رایگان آنلاین برای ویرایش متن فارسی: تبدیل کاراکتر، رفع کشیدگی، حذف نیم‌فاصله و بیشتر. همین حالا امتحان کنید!",
+  title: "ابزارهای آنلاین برای نویسندگان، برنامه‌نویسان و سرگرمی | Dtools",
+  description: "ابزارهای کاربردی برای نویسندگان، برنامه‌نویسان و کارهای روزمره. با Dtools به‌راحتی بنویسید، کدنویسی کنید و از سرگرمی‌های جذاب لذت ببرید!",
+  keywords: "ابزارهای آنلاین, ابزار نویسندگی, ابزار برنامه‌نویسی, سرگرمی آنلاین, بازی آنلاین, ابزارهای روزمره, Dtools"
 };
 
 const Page = () => {
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "dtools.ir",
+          "url": "https://dtools.ir",
+          "description": "ابزارهای آنلاین برای نویسندگان، برنامه‌نویسان، کارهای روزمره، سرگرمی و بازی. با dtools خلاقیت و بهره‌وری خود را افزایش دهید!",
+        },
+      ]
+    }
+
     return (
         <div className="flex flex-col">
             <div className={`flex flex-col bg-gradient-to-b from-gray-50 to-sky-50 pt-20 pb-25 gap-32`}>
@@ -56,6 +70,7 @@ const Page = () => {
                     <IndexItems/>
                 </div>
             </div>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
         </div>
     );
 };

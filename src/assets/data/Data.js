@@ -142,7 +142,7 @@ export const indexHead = [
             {
                 title : "متن تصادفی",
                 description : "تولید متن تصادفی",
-                link : "/create-passage",
+                link : "/lorem-ipsum-generator",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -172,7 +172,7 @@ export const indexHead = [
              {
                 title : "ویرایشگر (ادیتور) js آنلاین",
                 description : "js online editor",
-                link : "/js-online",
+                link : "/js-online-editor",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",

@@ -12,6 +12,27 @@ export const metadata = {
 };
 
 const Page = () => {
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "تولید متن تصادفی لورم ایپسوم dtools",
+      "url": "https://dtools.ir/lorem-ipsum-generator",
+      "description": "ابزار آنلاین رایگان برای تولید متن تصادفی لورم ایپسوم، مناسب برای طراحی وب و تست قالب‌ها.",
+      "applicationCategory": "Design Tools",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "IRR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "dtools",
+        "url": "https://dtools.ir"
+      }
+    }
+
     return (
         <SingleStructures
             title="تولید QRCODE"
@@ -23,6 +44,7 @@ const Page = () => {
                 <span>در دست اقدام</span>
                 <span className={`text-gray-500 animate-ping h-8 `}> . . . </span>
             </div>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
         </SingleStructures>
     );
 };

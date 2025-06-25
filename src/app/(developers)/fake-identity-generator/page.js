@@ -12,6 +12,27 @@ export const metadata = {
 };
 
 const Page = () => {
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "تولید اطلاعات هویتی dtools",
+      "url": "https://dtools.ir/identity-info-generator",
+      "description": "ابزار آنلاین رایگان برای تولید کد ملی، شماره تماس و آدرس تصادفی، مناسب برای تست و توسعه نرم‌افزار.",
+      "applicationCategory": "Developer Tools",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "IRR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "dtools",
+        "url": "https://dtools.ir"
+      }
+    }
+
     return (
         <SingleStructures
             title="تولید اطلاعات هویتی"
@@ -30,6 +51,7 @@ const Page = () => {
                 <span>در دست اقدام</span>
                 <span className={`text-gray-500 animate-ping h-8 `}> . . . </span>
             </div>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
         </SingleStructures>
     );
 };
