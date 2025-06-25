@@ -4,15 +4,37 @@ import SingleStructures from "@/components/pages/SingleStructures";
 import {IRANYekanFaNum} from "@/app/layout";
 
 export const metadata = {
-    title: "تبدیل اعداد فارسی و انگلیسی و عربی",
+    title: "ابزار تبدیل اعداد به فارسی، انگلیسی و عربی",
     description: "ابزار آنلاین تبدیل کاراکترهای فارسی به عربی با دقت بالا. متن فارسی خود را وارد کنید و به راحتی به عربی تبدیل کنید. مناسب برای سئو و تولید محتوا.",
+    keywords: "تبدیل اعداد, اعداد فارسی, اعداد انگلیسی, اعداد عربی, ابزار تبدیل متن, dtools"
 };
 
 const Page = () => {
+
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "تبدیل اعداد به فارسی، انگلیسی و عربی در dtools",
+      "url": "https://dtools.ir/number-transformer",
+      "description": "ابزار آنلاین رایگان برای تبدیل اعداد بین فرمت‌های فارسی، انگلیسی و عربی، مناسب برای نویسندگان و برنامه‌نویسان.",
+      "applicationCategory": "Utility Tools",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "IRR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "dtools",
+        "url": "https://dtools.ir"
+      }
+    }
+
     return (
         <SingleStructures
             title="تبدیل اعداد"
-            abstract="تبدیل اعداد فارسی و انگلیسی و عربی"
+            abstract="ابزار تبدیل اعداد به فارسی، انگلیسی و عربی"
             image={a}
             descTag={true}
             desc={
@@ -30,6 +52,7 @@ const Page = () => {
                 <span>در دست اقدام</span>
                 <span className={`text-gray-500 animate-ping h-8 `}> . . . </span>
             </div>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
         </SingleStructures>
     );
 };

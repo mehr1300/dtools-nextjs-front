@@ -13,6 +13,26 @@ export const metadata = {
 
 const Page = () => {
 
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "تبدیل متن به حروف بزرگ، کوچک و Snake Case",
+      "url": "https://dtools.ir/text-transformer",
+      "description": "ابزار آنلاین رایگان برای تبدیل متن انگلیسی به حروف بزرگ، کوچک، Snake Case و فرمت‌های دیگر، مناسب برای برنامه‌نویسان و نویسندگان.",
+      "applicationCategory": "Utility Tools",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "IRR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "dtools",
+        "url": "https://dtools.ir"
+      }
+    }
+
     return (
         <SingleStructures
             title="ابزار تبدیل متن"
@@ -26,6 +46,7 @@ const Page = () => {
             }
         >
             <TextTransformer/>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
         </SingleStructures>
     );
 };

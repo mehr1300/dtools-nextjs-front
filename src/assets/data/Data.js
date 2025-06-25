@@ -152,7 +152,7 @@ export const indexHead = [
             {
                 title : "تولید QRCODE",
                 description : "تولید کیو آر کد",
-                link : "/qr-code",
+                link : "/qr-code-generator",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -162,7 +162,7 @@ export const indexHead = [
             {
                 title : "gradient in tailwind",
                 description : "ابزار تولید گرادیانت دلخواه در تیلویند",
-                link : "/tailwind-gradient",
+                link : "/gradient-generator-tailwind",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
