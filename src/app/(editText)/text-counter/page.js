@@ -13,6 +13,26 @@ export const metadata = {
 
 const Page = () => {
 
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "شمارش متن، کاراکتر و کلمه در dtools",
+      "url": "https://dtools.ir/text-counter",
+      "description": "ابزار آنلاین رایگان برای شمارش تعداد کاراکتر، کلمه و فاصله در متن، مناسب برای نویسندگان و ویراستاران.",
+      "applicationCategory": "Utility Tools",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "IRR"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "dtools",
+        "url": "https://dtools.ir"
+      }
+    }
+
     return (
         <SingleStructures
             title="ابزار شمارشگر"
@@ -26,6 +46,7 @@ const Page = () => {
             }
         >
             <TextCounter/>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
         </SingleStructures>
     );
 };
