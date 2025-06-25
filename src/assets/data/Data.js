@@ -92,7 +92,7 @@ export const indexHead = [
             {
                 title : "تولید کد ملی",
                 description : "تولید کد ملی فیک برای تست برنامه ها",
-                link : "/national-code-generator",
+                link : "/fake-national-code-generator",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -102,7 +102,7 @@ export const indexHead = [
             {
                 title : "تولید اطلاعات هویتی",
                 description : "تولید اطلاعات هویتی فیک (کد ملی، شماره همراه ، تلفن ثابت و آدرس)",
-                link : "/identity-generator",
+                link : "/fake-identity-generator",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
