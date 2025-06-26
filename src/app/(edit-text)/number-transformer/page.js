@@ -2,6 +2,7 @@ import React from 'react';
 import a from "../../../assets/images/gifs/two.gif";
 import SingleStructures from "@/components/pages/SingleStructures";
 import {IRANYekanFaNum} from "@/app/layout";
+import NumberTransformer from "@/components/functions/NumberTransformer";
 
 export const metadata = {
     title: "ابزار تبدیل اعداد به فارسی، انگلیسی و عربی",
@@ -48,10 +49,7 @@ const Page = () => {
                 </div>
             }
         >
-            <div className={`h-60 ${IRANYekanFaNum.className} font-bold text-xl text-sky-400 gap-6 text_icon justify-center`}>
-                <span>در دست اقدام</span>
-                <span className={`text-gray-500 animate-ping h-8 `}> . . . </span>
-            </div>
+            <NumberTransformer/>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
         </SingleStructures>
     );

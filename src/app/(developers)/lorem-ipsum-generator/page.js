@@ -2,6 +2,7 @@ import React from 'react';
 import a from "../../../assets/images/gifs/text-box.gif";
 import {IRANYekanFaNum} from "@/app/layout";
 import SingleStructures from "@/components/pages/SingleStructures";
+import LoremIpsumGenerator from "@/components/functions/LoremIpsumGenerator";
 
 export const metadata = {
     title: "ابزار تولید متن تصادفی - لورم ایپسوم فارسی و انگلیسی",
@@ -47,10 +48,7 @@ const Page = () => {
                 </div>
             }
         >
-            <div className={`h-60 ${IRANYekanFaNum.className} font-bold text-xl text-sky-400 gap-6 text_icon justify-center`}>
-                <span>در دست اقدام</span>
-                <span className={`text-gray-500 animate-ping h-8 `}> . . . </span>
-            </div>
+            <LoremIpsumGenerator/>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
         </SingleStructures>
     );

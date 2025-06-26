@@ -1,8 +1,7 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/credit-card.gif";
-import {IRANYekanFaNum} from "@/app/layout";
 import SingleStructures from "@/components/pages/SingleStructures";
-import FakeNationalCodeGenerator from "@/components/functions/FakeNationalCodeGenerator";
+import ValidationNationalCode from "@/components/functions/ValidationNationalCode";
 
 export const metadata = {
     title: "ابزار تولید کد ملی فیک - ساخت کد ملی ایرانی جعلی",
@@ -36,7 +35,7 @@ const Page = () => {
 
     return (
         <SingleStructures
-            title="ابزار تولید کد ملی فیک"
+            title="اعتبار سنجی کد ملی"
             abstract="تولید کد ملی فیک برای تست برنامه ها"
             image={a}
             descTag={true}
@@ -47,7 +46,7 @@ const Page = () => {
                     <p>با الگوریتم‌های پیشرفته، این ابزار اطمینان می‌دهد که کدهای ملی تولیدشده از نظر فرمت و ساختار معتبر باشند. برای تست فرم‌ها، شبیه‌سازی داده‌ها یا توسعه نرم‌افزار، این ابزار انتخابی ایده‌آل است.</p>
                 </div>
             }>
-            <FakeNationalCodeGenerator/>
+            <ValidationNationalCode/>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
         </SingleStructures>
     );
