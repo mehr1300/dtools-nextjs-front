@@ -6,6 +6,9 @@ import QRCode from "react-qr-code";
 
 const QrCodeGenerator = () => {
     const [textOne, setTextOne] = useState("https://dtools.ir/");
+    const [valueFgColor, setValueFgColor] = useState("#000000");
+    const [valueBgColor, setValueBgColor] = useState("#ffffff");
+
     const qrRef = useRef(null); // Ref برای دسترسی به SVG
 
     const onSubmit = () => {
@@ -38,16 +41,25 @@ const QrCodeGenerator = () => {
     return (
         <div className="flex flex-col gap-5 justify-center w-full items-center">
             <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5">
-                <div className="flex flex-col gap-4 relative justify-center items-center w-full">
+                <div className="flex flex-col gap-3 relative justify-center items-center w-full">
                     <div ref={qrRef}>
-                        <QRCode value={textOne} size={220} fgColor="#000000" bgColor="#ffffff"  />
+                        <QRCode value={textOne} size={220} fgColor={valueFgColor} bgColor={valueBgColor}  />
                     </div>
-                    <div
-                        onClick={onSubmit}
-                        className="flex flex-row justify-center items-center p-3 w-40 rounded-xl bg-sky-400 hover:bg-sky-500 anime_hover text-gray-100 cursor-pointer"
-                    >
+                    <div className="flex flex-row gap-2 relative">
+                        <div className="relative h-10 w-10 rounded">
+                            <label htmlFor="ddd" className="absolute h-8 w-8 rounded border border-gray-300" style={{backgroundColor : valueFgColor}}></label>
+                            <input id="ddd" type="color" value={valueFgColor} onChange={(e)=>setValueFgColor(e.target.value)} className=" h-8 w-8 rounded-xl"/>
+                        </div>
+                       <div className="relative h-8 w-8 rounded">
+                           <label htmlFor="fff" className="absolute h-8 w-8 rounded border border-gray-300" style={{backgroundColor : valueBgColor}}></label>
+                           <input id="fff" type="color" value={valueBgColor} onChange={(e)=>setValueBgColor(e.target.value)} className=" h-8 w-8 rounded-xl"/>
+                       </div>
+                    </div>
+                    <div onClick={onSubmit}
+                        className="flex flex-row justify-center items-center p-3 w-40 rounded-xl bg-sky-400 hover:bg-sky-500 anime_hover text-gray-100 cursor-pointer">
                         دانلود
                     </div>
+
                 </div>
                 <div className="flex flex-col gap-3">
                     <label className="flex flex-row gap-1" htmlFor="textOne">
