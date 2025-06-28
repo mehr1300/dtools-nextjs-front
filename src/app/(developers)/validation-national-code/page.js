@@ -1,6 +1,6 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/credit-card.gif";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 import ValidationNationalCode from "@/components/functions/ValidationNationalCode";
 
 export const metadata = {

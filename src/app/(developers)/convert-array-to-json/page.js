@@ -1,7 +1,6 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/file.gif";
-import {IRANYekanFaNum} from "@/app/layout";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 import ConvertArrayToJson from "@/components/functions/ConvertArrayToJson";
 
 export const metadata = {

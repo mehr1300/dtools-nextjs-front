@@ -1,8 +1,8 @@
 import "./globals.css";
 import localFont from "next/font/local";
-import ToastContainer from "@/components/toast/ToastContainer";
-import Navbar from "@/components/pages/Navbar";
-import Footer from "@/components/pages/Footer";
+import ToastContainer from "@/components/section/toast/ToastContainer";
+import Navbar from "@/components/pages/layout/Navbar";
+import Footer from "@/components/pages/layout/Footer";
 
 export const Pelak = localFont({
     src: [

@@ -1,7 +1,7 @@
 import React from 'react';
 import ZeroWidthSpaceRemover from "@/components/functions/ZeroWidthSpaceRemover";
 import a from "../../../assets/images/gifs/bin.gif";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 
 export const metadata = {
     title: "ابزار حذف نیم‌فاصله - پاکسازی سریع متن",

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { persianToArabic } from "@/utility/functions";
-import { Toast } from "@/components/toast/Toast";
+import { Toast } from "@/components/section/toast/Toast";
 import QRCode from "react-qr-code";
 
 const QrCodeGenerator = () => {

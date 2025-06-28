@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import {transformText} from "@/utility/functions";
 import {LuCopy} from "react-icons/lu";
-import {Toast} from "@/components/toast/Toast";
+import {Toast} from "@/components/section/toast/Toast";
 
 const TextTransformer = () => {
 

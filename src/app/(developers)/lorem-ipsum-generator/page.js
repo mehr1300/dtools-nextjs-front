@@ -1,7 +1,7 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/text-box.gif";
 import {IRANYekanFaNum} from "@/app/layout";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 import LoremIpsumGenerator from "@/components/functions/LoremIpsumGenerator";
 
 export const metadata = {

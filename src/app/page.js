@@ -1,8 +1,8 @@
 import React from 'react';
-import IndexHead from "@/components/pages/IndexHead";
+import IndexHead from "@/components/pages/page/IndexHead";
 import {IRANYekanFaNum, Kalameh} from "@/app/layout";
 import {indexHead} from "@/assets/data/Data";
-import IndexItems from "@/components/pages/IndexItems";
+import IndexItems from "@/components/pages/page/IndexItems";
 import {GoArrowLeft} from "react-icons/go";
 import Link from "next/link";
 

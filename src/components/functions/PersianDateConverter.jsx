@@ -1,7 +1,7 @@
 "use client"
 import React, {useEffect, useState} from 'react';
 import {convertDate, convertNumbers, getCurrentYear} from "@/utility/functions";
-import {Toast} from "@/components/toast/Toast";
+import {Toast} from "@/components/section/toast/Toast";
 import {dayList} from "@/assets/data/DataList";
 
 const PersianDateConverter = () => {

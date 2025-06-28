@@ -1,7 +1,7 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/encryption.gif";
 import {IRANYekanFaNum} from "@/app/layout";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 import DecodeEncode from "@/components/functions/DecodeEncode";
 
 export const metadata = {
@@ -39,6 +39,7 @@ const Page = () => {
             title="decode و encode"
             abstract="دیکود (decode) و انکود (encode) | تبدیل رشته ها به کاکتر و برعکس"
             image={a}
+            descTag={true}
             desc={
                 <>
                     <strong>انکود و دیکود رشته dtools</strong> ابزاری حرفه‌ای برای برنامه‌نویسان است که به شما امکان می‌دهد رشته‌ها را به کاراکترهای کدشده تبدیل کنید یا کدهای کاراکتری را به رشته‌های خوانا برگردانید. این ابزار برای کار با داده‌های رمزنگاری‌شده یا فرمت‌های خاص ایده‌آل است.

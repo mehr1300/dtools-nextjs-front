@@ -1,7 +1,7 @@
 import React from 'react';
 import TatweelRemover from "@/components/functions/TatweelRemover";
 import a from "../../../assets/images/gifs/ruler.gif";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 
 export const metadata = {
     title: "ابزار رفع کشیدگی متن - پاکسازی سریع متن",

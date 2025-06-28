@@ -1,7 +1,7 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/gradient.gif";
 import {IRANYekanFaNum} from "@/app/layout";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 import GradientGeneratorTailwind from "@/components/functions/GradientGeneratorTailwind";
 
 export const metadata = {
@@ -39,6 +39,7 @@ const Page = () => {
             title="gradient in tailwind"
             abstract="ابزار تولید گرادیانت دلخواه در تیلویند"
             image={a}
+            descTag={true}
             desc={
                 <>
                     <strong>ابزار تولید گرادیانت دلخواه dtools</strong> انتخابی عالی برای طراحان وب است که می‌خواهند گرادیانت‌های زیبا و سفارشی بسازند و کد Tailwind CSS آن را دریافت کنند. این ابزار برای پروژه‌های طراحی مدرن ایده‌آل است.

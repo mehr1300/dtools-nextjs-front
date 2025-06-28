@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import {Toast} from "@/components/toast/Toast";
+import {Toast} from "@/components/section/toast/Toast";
 import {getProvinceAndCityFromCode, isValidIranianNationalCode} from "@/utility/functions";
 
 const ValidationNationalCode = () => {

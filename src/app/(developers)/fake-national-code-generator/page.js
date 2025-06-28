@@ -1,7 +1,7 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/credit-card.gif";
 import {IRANYekanFaNum} from "@/app/layout";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 import FakeNationalCodeGenerator from "@/components/functions/FakeNationalCodeGenerator";
 
 export const metadata = {

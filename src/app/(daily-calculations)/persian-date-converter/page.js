@@ -1,7 +1,7 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/qr-code.gif";
 import {IRANYekanFaNum} from "@/app/layout";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 import PersianDateConverter from "@/components/functions/PersianDateConverter";
 
 export const metadata = {
@@ -39,6 +39,7 @@ const Page = () => {
             title="ابزار تبدیل تاریخ شمسی به میلادی و قمری و برعکس"
             abstract="تولید کیو آر کد"
             image={a}
+            descTag={true}
             desc={
                 <>
                     <strong>ابزار تولید QR Code dtools</strong> راه‌حلی سریع و کارآمد برای کاربرانی است که می‌خواهند لینک، متن یا اطلاعات خود را به QR کد تبدیل کنند. این ابزار برای کسب‌وکارها، توسعه‌دهندگان و کاربران روزمره ایده‌آل است.

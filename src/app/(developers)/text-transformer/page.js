@@ -1,7 +1,7 @@
 import React from 'react';
 import TextTransformer from "@/components/functions/TextTransformer";
 import a from "../../../assets/images/gifs/shuffle.gif";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 
 export const metadata = {
     title: "ابزار تبدیل متن - حروف بزرگ، کوچک، Snake Case",

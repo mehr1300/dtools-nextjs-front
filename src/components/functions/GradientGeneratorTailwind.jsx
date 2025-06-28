@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Toast } from "@/components/toast/Toast";
+import { Toast } from "@/components/section/toast/Toast";
 import {presets, tailwindColors} from "@/assets/data/DataList";
 
 const GradientGeneratorTailwind = () => {

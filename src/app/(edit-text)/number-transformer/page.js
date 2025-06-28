@@ -1,6 +1,6 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/two.gif";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 import {IRANYekanFaNum} from "@/app/layout";
 import NumberTransformer from "@/components/functions/NumberTransformer";
 

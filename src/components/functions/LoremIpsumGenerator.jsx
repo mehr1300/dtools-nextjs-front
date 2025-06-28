@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import {LuCopy} from "react-icons/lu";
-import {Toast} from "@/components/toast/Toast";
+import {Toast} from "@/components/section/toast/Toast";
 
 const persianWords = [
     "جهان", "زندگی", "عشق", "آزادی", "خورشید", "ماه", "ستاره", "آسمان", "زمین", "دریا",

@@ -1,7 +1,7 @@
 import React from 'react';
 import TextCounter from "@/components/functions/TextCounter";
 import a from "../../../assets/images/gifs/garlands.gif";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 
 export const metadata = {
     title: "ابزار شمارش متن - تعداد کاراکتر، کلمه، فاصله",

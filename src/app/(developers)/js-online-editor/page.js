@@ -1,7 +1,7 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/coding.gif";
 import {IRANYekanFaNum} from "@/app/layout";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 
 export const metadata = {
     title: "کد ادیتور جاوا اسکریپت آنلاین",

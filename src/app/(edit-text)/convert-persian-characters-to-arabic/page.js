@@ -1,7 +1,7 @@
 import React from 'react';
 import a from "../../../assets/images/gifs/letter-a.gif";
 import ConvertPersianCharactersToArabic from "@/components/functions/ConvertPersianCharactersToArabic";
-import SingleStructures from "@/components/pages/SingleStructures";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 
 export const metadata = {
     title: "ابزار تبدیل کارکتر های فارسی به عربی",

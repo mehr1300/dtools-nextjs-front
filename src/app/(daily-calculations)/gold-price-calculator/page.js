@@ -1,6 +1,6 @@
 import React from 'react';
-import a from "../../../assets/images/gifs/qr-code.gif";
-import SingleStructures from "@/components/pages/SingleStructures";
+import a from "../../../assets/images/gifs/calculator.gif";
+import SingleStructures from "@/components/pages/url/SingleStructures";
 import GoldPriceCalculator from "@/components/functions/GoldPriceCalculator";
 
 export const metadata = {
@@ -38,6 +38,7 @@ const Page = () => {
             title="ابزار رایگان محاسبه قیمت طلا با اجرت و مالیات"
             abstract="تولید کیو آر کد"
             image={a}
+            descTag={true}
             desc={
                 <>
                     <strong>ابزار تولید QR Code dtools</strong> راه‌حلی سریع و کارآمد برای کاربرانی است که می‌خواهند لینک، متن یا اطلاعات خود را به QR کد تبدیل کنند. این ابزار برای کسب‌وکارها، توسعه‌دهندگان و کاربران روزمره ایده‌آل است.
