@@ -1,4 +1,21 @@
 import {cityCodes} from "@/assets/data/NationalCodeData";
+import momentJalaali from 'moment-jalaali';
+import momentHijri from 'moment-hijri';
+import momentGregorian from 'moment';
+import 'moment/locale/fa'; // برای فارسی (شمسی)
+import 'moment/locale/ar'; // برای عربی (قمری)
+import 'moment/locale/en-gb'; // برای انگلیسی (میلادی)
+
+
+export const addCommas = num => num?.toString()?.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+export const removeNonNumeric = num => num?.toString()?.replace(/[^0-9]/g, "");
+export const onKeyPressHandler = (e) => {
+    if (!/[0-9]/.test(e.key)) {
+        e.preventDefault();
+    }
+}
+
+
 
 export function persianToArabic(text) {
     // Mapping of Persian characters to Arabic equivalents
@@ -187,3 +204,180 @@ export const convertNumbers = (text, format) => {
         }
     });
 };
+
+
+
+export function getCurrentYear(input) {
+    const today = new Date();
+    const gregorianYear = today.getFullYear();
+    const jalaliYear = momentJalaali(today).jYear() || gregorianYear;
+    const hijriYear = momentHijri(today).iYear() || gregorianYear;
+    console.log(input)
+    switch (input) {
+        case "jalali":
+            return jalaliYear.toString(); // اطمینان از بازگشت رشته
+        case "gregorian":
+            return gregorianYear.toString(); // اطمینان از بازگشت رشته
+        case "hijri":
+            return hijriYear.toString(); // اطمینان از بازگشت رشته
+        default:
+            throw new Error("Invalid calendar type. Use 'jalali', 'gregorian', or 'hijri'.");
+    }
+}
+
+
+
+const hijriMonthsArabic = [
+    'محرم', 'صفر', 'ربيع الأول', 'ربيع الثاني', 'جمادى الأولى', 'جمادى الآخرة',
+    'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'
+];
+
+const zodiacImages = {
+    'حمل': '/images/zodiac/aries.png',
+    'ثور': '/images/zodiac/taurus.png',
+    'جوزا': '/images/zodiac/gemini.png',
+    'سرطان': '/images/zodiac/cancer.png',
+    'اسد': '/images/zodiac/leo.png',
+    'سنبله': '/images/zodiac/virgo.png',
+    'میزان': '/images/zodiac/libra.png',
+    'عقرب': '/images/zodiac/scorpio.png',
+    'قوس': '/images/zodiac/sagittarius.png',
+    'جدی': '/images/zodiac/capricorn.png',
+    'دلو': '/images/zodiac/aquarius.png',
+    'حوت': '/images/zodiac/pisces.png'
+};
+
+function getZodiacSign(month, day) {
+    const zodiacs = [
+        { name: 'حمل', start: { month: 3, day: 21 }, end: { month: 4, day: 19 } },
+        { name: 'ثور', start: { month: 4, day: 20 }, end: { month: 5, day: 20 } },
+        { name: 'جوزا', start: { month: 5, day: 21 }, end: { month: 6, day: 20 } },
+        { name: 'سرطان', start: { month: 6, day: 21 }, end: { month: 7, day: 22 } },
+        { name: 'اسد', start: { month: 7, day: 23 }, end: { month: 8, day: 22 } },
+        { name: 'سنبله', start: { month: 8, day: 23 }, end: { month: 9, day: 22 } },
+        { name: 'میزان', start: { month: 9, day: 23 }, end: { month: 10, day: 22 } },
+        { name: 'عقرب', start: { month: 10, day: 23 }, end: { month: 11, day: 21 } },
+        { name: 'قوس', start: { month: 11, day: 22 }, end: { month: 12, day: 21 } },
+        { name: 'جدی', start: { month: 12, day: 22 }, end: { month: 1, day: 19 } },
+        { name: 'دلو', start: { month: 1, day: 20 }, end: { month: 2, day: 18 } },
+        { name: 'حوت', start: { month: 2, day: 19 }, end: { month: 3, day: 20 } },
+    ];
+
+    for (const zodiac of zodiacs) {
+        if ((month === zodiac.start.month && day >= zodiac.start.day) ||
+            (month === zodiac.end.month && day <= zodiac.end.day)) {
+            return zodiac.name;
+        }
+    }
+    return 'نامشخص';
+}
+
+export function convertDate({ type, year, month, day }) {
+    if (!['jalali', 'gregorian', 'hijri'].includes(type)) {
+        throw new Error("Invalid calendar type. Use 'jalali', 'gregorian', or 'hijri'.");
+    }
+    if (!Number.isInteger(year) || year < 1) {
+       return {
+           status : "failed",
+           data : [],
+           message : "سال ارسالی صحیح نیست.",
+       }
+    }
+    if (!Number.isInteger(month) || month < 1 || month > 12) {
+        return {
+            status : "failed",
+            data : [],
+            message : "ماه ارسالی صحیح نیست.",
+        }
+    }
+    if (!Number.isInteger(day) || day < 1 || day > 31) {
+        return {
+            status : "failed",
+            data : [],
+            message : "روز ارسالی صحیح نیست.",
+        }
+    }
+
+    let gregorianMoment, jalaliMoment, hijriMoment;
+
+    if (type === 'gregorian') {
+        gregorianMoment = momentGregorian(`${year}-${month}-${day}`, 'YYYY-MM-DD');
+        if (!gregorianMoment.isValid()) {
+            return {
+                status : "failed",
+                data : [],
+                message : "خطا در محاسبه.",
+            }
+        }
+    } else if (type === 'jalali') {
+        jalaliMoment = momentJalaali(`${year}-${month}-${day}`, 'jYYYY-jMM-jDD');
+        if (!jalaliMoment.isValid()) {
+            return {
+                status : "failed",
+                data : [],
+                message : "خطا در محاسبه.",
+            }
+        }
+        gregorianMoment = momentGregorian(jalaliMoment.toDate());
+    } else if (type === 'hijri') {
+        hijriMoment = momentHijri(`${year}-${month}-${day}`, 'iYYYY-iMM-iDD');
+        if (!hijriMoment.isValid()) {
+            return {
+                status : "failed",
+                data : [],
+                message : "خطا در محاسبه.",
+            }
+        }
+        gregorianMoment = momentGregorian(hijriMoment.toDate());
+    }
+
+    jalaliMoment = jalaliMoment || momentJalaali(gregorianMoment.toDate());
+    hijriMoment = hijriMoment || momentHijri(gregorianMoment.toDate());
+    gregorianMoment = gregorianMoment || momentGregorian(gregorianMoment.toDate());
+
+    jalaliMoment.locale('fa');
+    gregorianMoment.locale('en-gb');
+    hijriMoment.locale('ar');
+
+    const jalaliDayName = jalaliMoment.format('dddd');
+    const gregorianDayName = gregorianMoment.format('dddd');
+    const hijriDayName = hijriMoment.format('dddd');
+
+    const jalaliFormatted = jalaliMoment.format('jYYYY/jMM/jDD');
+    const gregorianFormatted = gregorianMoment.format('YYYY-MM-DD');
+    const hijriFormatted = hijriMoment.format('iYYYY/iMM/iDD');
+
+    // گرفتن نام ماه قمری به عربی
+    const hijriMonthIndex = hijriMoment.iMonth(); // ماه از 0 تا 11
+    const hijriMonthName = hijriMonthsArabic[hijriMonthIndex];
+
+    const zodiacName = getZodiacSign(gregorianMoment.month() + 1, gregorianMoment.date());
+    const zodiacImage = zodiacImages[zodiacName] || '/images/zodiac/default.png';
+
+    return {
+        status : "success",
+        data : [
+            {
+                calendar: 'تاریخ خورشیدی',
+                date: jalaliFormatted,
+                fullDate: `${jalaliDayName} - ${jalaliMoment.jDate()} ${jalaliMoment.format('jMMMM')} ${jalaliMoment.jYear()}`
+            },
+            {
+                calendar: 'تاریخ میلادی',
+                date: gregorianFormatted,
+                fullDate: `${gregorianDayName} - ${gregorianMoment.date()} ${gregorianMoment.format('MMMM')} ${gregorianMoment.year()}`
+            },
+            {
+                calendar: 'تاریخ قمری',
+                date: hijriFormatted,
+                fullDate: `${hijriDayName} - ${hijriMoment.iDate()} ${hijriMonthName} ${hijriMoment.iYear()}`
+            },
+            {
+                calendar: 'برج فلکی',
+                date: zodiacImage, // آدرس عکس برج
+                fullDate: zodiacName // نام برج (اختیاری)
+            }
+        ],
+        message : null,
+    }
+}

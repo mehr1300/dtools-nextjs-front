@@ -17,14 +17,15 @@ const arabicWords = [
 ];
 
 const persianSentences = [
-    "جهان پر از زیبایی‌های ناشناخته است.",
-    "زندگی با امید و عشق معنا پیدا می‌کند.",
-    "خورشید هر روز با طلوع خود پیام امید می‌آورد.",
-    "آرامش در طبیعت و سکوت جنگل یافت می‌شود.",
-    "ستارگان در آسمان شب داستان‌های بی‌پایان می‌گویند.",
-    "دریا با امواج خود رازهای عمیق را فاش می‌کند.",
-    "آینده در دستان کسانی است که به رویاهای خود باور دارند."
+    "جهان مملو از فرصت‌های بی‌پایان برای کشف امید و شادی است.",
+    "عشق نیروی قدرتمندی است که به زندگی انسان معنا و هدف می‌بخشد.",
+    "خورشید با طلوع هر روز، پیام‌آور نور و انگیزه برای ادامه‌ی راه است.",
+    "طبیعت با زیبایی‌های بی‌کران خود، آرامش و تعادل را به روح انسان هدیه می‌دهد.",
+    "ستارگان در آسمان شب، داستان‌های کهن و رازهای عمیق هستی را بازگو می‌کنند.",
+    "دریا با امواج بی‌پایان و ژرفای خود، اسرار زندگی و طبیعت را آشکار می‌سازد.",
+    "باور به رویاها و تلاش برای تحقق آن‌ها، آینده‌ای روشن و موفق را رقم می‌زند."
 ];
+
 const englishSentences = [
     "The world is full of undiscovered beauty.",
     "Life finds meaning through hope and love.",
@@ -53,7 +54,7 @@ const generateRandomText = (language, type, count) => {
     const getRandomSentence = () => sentences[Math.floor(Math.random() * sentences.length)];
 
     const getRandomParagraph = () => {
-        const sentenceCount = Math.floor(Math.random() * 3) + 3; // 3 تا 5 جمله
+        const sentenceCount = Math.floor(Math.random() * 3) + 11; // 3 تا 5 جمله
         return Array.from({ length: sentenceCount }, getRandomSentence).join(" ");
     };
 
@@ -90,7 +91,7 @@ const LoremIpsumGenerator = () => {
     };
 
     return (
-        <div className="flex flex-col gap-5 justify-center w-full items-center p-6 w-full">
+        <div className="flex flex-col gap-5 justify-center w-full items-center p-6">
             <div className="flex flex-col gap-4 w-full  ">
                 <div className="flex flex-col gap-2">
                     <div className="flex flex-row">
