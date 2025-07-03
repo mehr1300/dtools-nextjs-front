@@ -7,7 +7,7 @@ const Footer = () => {
         <div className={`h-20 flex items-center justify-center bg-gray-50`}>
             <div className={`max-w-screen-xl text_icon justify-between mx-auto w-full px-5 `}>
                 <span className={`text-gray-500 ${Kalameh.className}`}>تمام حقوق برای Dtools محفوظ است.</span>
-                <Link className={`text-2xl`} href="/public"><strong><span className={`text-sky-300`}>D</span>tools</strong></Link>
+                <Link className={`text-2xl`} href="/"><strong><span className={`text-sky-300`}>D</span>tools</strong></Link>
             </div>
         </div>
     );

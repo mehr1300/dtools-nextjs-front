@@ -206,7 +206,7 @@ export const indexHead = [
             {
                 title : "تبدیل تاریخ",
                 description : "تبدیل تاریخ شمسی به میلادی و قمری و برعکس",
-                link : "/",
+                link : "/persian-date-converter",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -216,7 +216,7 @@ export const indexHead = [
             {
                 title : "محاسبه قیمت طلا",
                 description : "محاسبه اجرت و قیمت نهایی خرید طلا",
-                link : "/",
+                link : "/gold-price-calculator",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -227,6 +227,16 @@ export const indexHead = [
                 title : "محاسبه سن",
                 description : "محاسبه سال، ماه، هفته و روز | سن شما",
                 link : "/",
+                color1 : "bg-cyan-500",
+                color2 : "bg-cyan-50",
+                textColor1 : "text-cyan-500",
+                icon : <BiSolidCalculator size={24}/>,
+                dropShadow : "drop-shadow-cyan-200",
+            },
+            {
+                title : "محاسبه اقساط خرید",
+                description : "محاسبه سود خرید قسطی از سایت ها",
+                link : "/installment-purchase-calculator",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -246,7 +256,7 @@ export const indexHead = [
             {
                 title : "تبدیل واحد",
                 description : "تبدیل واحد ها به هم",
-                link : "/",
+                link : "/unit-converter",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
