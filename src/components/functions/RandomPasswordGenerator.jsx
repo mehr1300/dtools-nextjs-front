@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaCopy, FaRedo, FaCheck, FaEye, FaEyeSlash } from 'react-icons/fa';
+import {LuCopy} from "react-icons/lu";
 
 const RandomPasswordGenerator = () => {
     // تنظیمات رمز عبور
@@ -20,7 +21,6 @@ const RandomPasswordGenerator = () => {
     // رمز تولید شده و وضعیت نمایش
     const [password, setPassword] = useState('');
     const [isCopied, setIsCopied] = useState(false);
-    const [showPassword, setShowPassword] = useState(false);
     const [strength, setStrength] = useState(0);
 
     // مجموعه کاراکترها
@@ -139,44 +139,30 @@ const RandomPasswordGenerator = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div className="">
+            <div className="max-w-2xl mx-auto">
                 <div className="p-8">
-                    <div className="flex justify-between items-center mb-6">
-                        <h1 className="text-2xl font-bold text-gray-800">مولد رمز عبور تصادفی</h1>
-                        <button
-                            onClick={generatePassword}
-                            className="p-2 rounded-full bg-indigo-100 text-indigo-600 hover:bg-indigo-200 transition-colors"
-                            title="تولید مجدد"
-                        >
+                    <div className="flex gap-2 justify-end items-center mb-3">
+                        <button onClick={generatePassword}
+                                className={`rounded-xl cursor-pointer left-0 -top-5 text-blue-500   size-10 bg-blue-200 flex items-center justify-center`}>
                             <FaRedo />
                         </button>
+                        <div  onClick={copyToClipboard} className={`rounded-xl cursor-pointer left-0 -top-5 text-blue-500   size-10 bg-blue-200 flex items-center justify-center`}>
+                            {isCopied ? <FaCheck className="text-green-500" size={21} /> : <LuCopy size={21} />}
+                        </div>
                     </div>
 
                     {/* نمایش رمز */}
                     <div className="mb-6">
                         <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
                             <input
-                                type={showPassword ? "text" : "password"}
+                                type="text"
                                 value={password}
                                 readOnly
-                                className="flex-grow p-3 outline-none text-left direction-ltr"
+                                className="flex-grow p-3 px-5 outline-none text-left direction-ltr"
                             />
                             <div className="flex">
-                                <button
-                                    onClick={() => setShowPassword(!showPassword)}
-                                    className="p-3 text-gray-600 hover:text-indigo-600 transition-colors"
-                                    title={showPassword ? "مخفی کردن رمز" : "نمایش رمز"}
-                                >
-                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
-                                </button>
-                                <button
-                                    onClick={copyToClipboard}
-                                    className="p-3 text-gray-600 hover:text-indigo-600 transition-colors border-l border-gray-300"
-                                    title="کپی به کلیپ‌بورد"
-                                >
-                                    {isCopied ? <FaCheck className="text-green-500" /> : <FaCopy />}
-                                </button>
+
                             </div>
                         </div>
                         {password && (
@@ -352,16 +338,7 @@ const RandomPasswordGenerator = () => {
                         </div>
                     </div>
 
-                    {/* نکات امنیتی */}
-                    <div className="mt-8 p-4 bg-blue-50 rounded-lg">
-                        <h3 className="text-sm font-medium text-blue-800 mb-2">نکات افزایش قدرت رمز عبور</h3>
-                        <ul className="text-xs text-blue-700 space-y-1 list-disc list-inside text-right">
-                            <li>استفاده از حداقل ۱۲ کاراکتر</li>
-                            <li>ترکیبی از انواع کاراکترها استفاده شود</li>
-                            <li>از کلمات یا الگوهای رایج استفاده نکنید</li>
-                            <li>برای یادآوری راحت‌تر می‌توانید از عبارات استفاده کنید</li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </div>
