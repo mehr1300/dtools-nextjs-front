@@ -1,28 +1,6 @@
 import {TbExchange} from "react-icons/tb";
 import React from "react";
-import {
-    BiCandles,
-    BiCodeAlt,
-    BiCodeBlock,
-    BiLogoJavascript,
-    BiLogoTailwindCss,
-    BiMath,
-    BiQrScan, BiSolidBarcode,
-    BiSolidCalculator,
-    BiSolidCalendarAlt,
-    BiSolidCalendarEdit,
-    BiSolidCreditCardFront,
-    BiSolidDetail,
-    BiSolidEdit,
-    BiSolidEraser,
-    BiSolidGame,
-    BiSolidGrid,
-    BiSolidIdCard,
-    BiSolidJoystick, BiSolidLock,
-    BiSolidNotepad, BiSolidShield,
-    BiSolidUserDetail,
-    BiSync
-} from "react-icons/bi";
+import {BiCandles, BiCodeAlt, BiCodeBlock, BiLogoJavascript, BiLogoTailwindCss, BiMath, BiQrScan, BiSolidBarcode, BiSolidCalculator, BiSolidCalendarAlt, BiSolidCalendarEdit, BiSolidCreditCardFront, BiSolidDetail, BiSolidEdit, BiSolidEraser, BiSolidGame, BiSolidGrid, BiSolidIdCard, BiSolidJoystick, BiSolidLock, BiSolidNotepad, BiSolidShield, BiSolidUserDetail, BiSync} from "react-icons/bi";
 import {PiCoinVerticalFill} from "react-icons/pi";
 import {RiCompassFill} from "react-icons/ri";
 
