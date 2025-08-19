@@ -1,6 +1,28 @@
 import {TbExchange} from "react-icons/tb";
 import React from "react";
-import {BiCandles, BiCodeAlt, BiCodeBlock, BiLogoJavascript, BiLogoTailwindCss, BiMath, BiQrScan, BiSolidCalculator, BiSolidCalendarAlt, BiSolidCalendarEdit, BiSolidCreditCardFront, BiSolidDetail, BiSolidEdit, BiSolidEraser, BiSolidGame, BiSolidGrid, BiSolidJoystick, BiSolidNotepad, BiSolidUserDetail, BiSync} from "react-icons/bi";
+import {
+    BiCandles,
+    BiCodeAlt,
+    BiCodeBlock,
+    BiLogoJavascript,
+    BiLogoTailwindCss,
+    BiMath,
+    BiQrScan, BiSolidBarcode,
+    BiSolidCalculator,
+    BiSolidCalendarAlt,
+    BiSolidCalendarEdit,
+    BiSolidCreditCardFront,
+    BiSolidDetail,
+    BiSolidEdit,
+    BiSolidEraser,
+    BiSolidGame,
+    BiSolidGrid,
+    BiSolidIdCard,
+    BiSolidJoystick, BiSolidLock,
+    BiSolidNotepad, BiSolidShield,
+    BiSolidUserDetail,
+    BiSync
+} from "react-icons/bi";
 import {PiCoinVerticalFill} from "react-icons/pi";
 import {RiCompassFill} from "react-icons/ri";
 
@@ -100,13 +122,23 @@ export const indexHead = [
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
-                title : "صحت سنجی کدملی",
-                description : "اعتبار سنجی کد ملی (تعیین استان و شهر صدور کدملی)",
+                title : "اعتبار سنجی کد ملی",
+                description : "اعتبار سنجی کد ملی های دریافتی",
                 link : "/validation-national-code",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
-                icon : <BiSolidCreditCardFront size={24}/>,
+                icon : <BiSolidIdCard  size={24}/>,
+                dropShadow : "drop-shadow-fuchsia-200",
+            },
+            {
+                title : "تولید رمزعبور",
+                description : "ابزار تولید رمز عبور ایمن",
+                link : "/random-password-generator",
+                color1 : "bg-fuchsia-700",
+                color2 : "bg-fuchsia-50",
+                textColor1 : "text-fuchsia-500",
+                icon : <BiSolidShield  size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
@@ -140,9 +172,9 @@ export const indexHead = [
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
-                title : "decode و encode",
-                description : "دیکود (decode) و انکود (encode) | تبدیل رشته ها به کاکتر و برعکس",
-                link : "/decode-encode",
+                title : "انکود و دیکود URL",
+                description : "دیکود (decode) و انکود (encode) | تبدیل url به کاکتر و برعکس",
+                link : "/url-encode-decode",
                 color1 : "bg-fuchsia-700",
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
@@ -170,6 +202,16 @@ export const indexHead = [
                 dropShadow : "drop-shadow-fuchsia-200",
             },
             {
+                title : "تولید بارکد Barcode",
+                description : "ابزار تولید بارکد",
+                link : "/barcode-generator",
+                color1 : "bg-fuchsia-700",
+                color2 : "bg-fuchsia-50",
+                textColor1 : "text-fuchsia-500",
+                icon : <BiSolidBarcode size={24}/>,
+                dropShadow : "drop-shadow-fuchsia-200",
+            },
+            {
                 title : "gradient in tailwind",
                 description : "ابزار تولید گرادیانت دلخواه در تیلویند",
                 link : "/gradient-generator-tailwind",
@@ -187,6 +229,16 @@ export const indexHead = [
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
                 icon : <BiLogoJavascript size={24}/>,
+                dropShadow : "drop-shadow-fuchsia-200",
+            },
+            {
+                title : "تولید انواع رمز نگاری sha",
+                description : "sha1/sha3/sah256 hash generator",
+                link : "/sha-hash-generator",
+                color1 : "bg-fuchsia-700",
+                color2 : "bg-fuchsia-50",
+                textColor1 : "text-fuchsia-500",
+                icon : <BiSolidLock size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
 
@@ -234,16 +286,6 @@ export const indexHead = [
                 dropShadow : "drop-shadow-cyan-200",
             },
             {
-                title : "محاسبه خرید قسطی",
-                description : "محاسبه اقساط خرید",
-                link : "/installment-purchase-calculator",
-                color1 : "bg-cyan-500",
-                color2 : "bg-cyan-50",
-                textColor1 : "text-cyan-500",
-                icon : <BiSolidCalculator size={24}/>,
-                dropShadow : "drop-shadow-cyan-200",
-            },
-            {
                 title : "محاسبه سن",
                 description : "محاسبه سال، ماه، هفته و روز | سن شما",
                 link : "/",
@@ -254,9 +296,9 @@ export const indexHead = [
                 dropShadow : "drop-shadow-cyan-200",
             },
             {
-                title : "تبدیل واحد",
-                description : "محاسبه سال، ماه، هفته و روز | سن شما",
-                link : "/unit-converter",
+                title : "محاسبه اقساط خرید",
+                description : "محاسبه سود خرید قسطی از سایت ها",
+                link : "/installment-purchase-calculator",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -276,7 +318,7 @@ export const indexHead = [
             {
                 title : "تبدیل واحد",
                 description : "تبدیل واحد ها به هم",
-                link : "/",
+                link : "/unit-converter",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",

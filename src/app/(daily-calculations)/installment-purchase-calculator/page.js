@@ -1,55 +1,55 @@
 import React from 'react';
-import a from "../../../assets/images/gifs/qr-code.gif";
+import a from "../../../assets/images/gifs/calculator.gif";
 import SingleStructures from "@/components/pages/url/SingleStructures";
 import InstallmentPurchaseCalculator from "@/components/functions/InstallmentPurchaseCalculator";
 
 export const metadata = {
-    title: "ابزار رایگان تولید QR Code ",
-    description: "ابزار رایگان تولید QR Code در dtools. لینک، متن یا اطلاعات خود را به QR کد تبدیل کنید. سریع و ساده، همین حالا امتحان کنید!",
+    title: "ابزار رایگان محاسبه‌گر اقساط خرید",
+    description: "ابزار رایگان محاسبه اقساط خرید در dtools. مبلغ خرید، نرخ سود و مدت زمان بازپرداخت را وارد کنید و اقساط خود را به‌سرعت محاسبه کنید!",
     author: "dtools.ir",
     robots: "index, follow",
-    keywords: "تولید QR Code, ساخت کیو آر کد, QR کد آنلاین, ابزار کیو آر کد, dtools",
+    keywords: "محاسبه‌گر اقساط خرید, محاسبه قسط, اقساط آنلاین, ابزار محاسبه اقساط, dtools",
 };
 
 const Page = () => {
 
     const jsonLd = {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "ابزار رایگان تولید QR Code ",
-      "url": "https://dtools.ir/qr-code-generator",
-      "description": "ابزار آنلاین رایگان برای تولید QR Code از لینک، متن یا اطلاعات، مناسب برای اشتراک‌گذاری سریع داده‌ها.",
-      "applicationCategory": "Utility Tools",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "IRR"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "dtools",
-        "url": "https://dtools.ir"
-      }
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ابزار رایگان محاسبه‌گر اقساط خرید",
+        "url": "https://dtools.ir/installment-calculator",
+        "description": "ابزار آنلاین رایگان برای محاسبه اقساط خرید بر اساس مبلغ، نرخ سود و مدت بازپرداخت. مناسب برای برنامه‌ریزی مالی خریدهای قسطی.",
+        "applicationCategory": "Financial Tools",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "IRR"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "dtools",
+            "url": "https://dtools.ir"
+        }
     }
 
     return (
         <SingleStructures
             title="محاسبه‌گر اقساط خرید"
-            abstract="تولید کیو آر کد"
+            abstract="اقساط خرید"
             image={a}
             descTag={true}
             desc={
                 <>
-                    <strong>ابزار تولید QR Code dtools</strong> راه‌حلی سریع و کارآمد برای کاربرانی است که می‌خواهند لینک، متن یا اطلاعات خود را به QR کد تبدیل کنند. این ابزار برای کسب‌وکارها، توسعه‌دهندگان و کاربران روزمره ایده‌آل است.
-                    با <strong>ابزار ساخت کیو آر کد آنلاین</strong>، می‌توانید به‌راحتی لینک وب‌سایت، اطلاعات تماس، متن یا هر داده دیگری را وارد کنید و QR کد مربوطه را فوراً دریافت کنید. این ابزار نیازی به نصب ندارد و مستقیماً در مرورگر شما کار می‌کند.
-                    <strong>چرا ابزار تولید QR Code dtools؟</strong> این ابزار با رابط کاربری ساده، پشتیبانی از انواع داده‌ها و امکان دانلود QR کد در فرمت‌های مختلف، تجربه‌ای بی‌نقص ارائه می‌دهد. چه برای تبلیغات، اشتراک‌گذاری لینک یا ذخیره اطلاعات باشد، dtools کار شما را آسان می‌کند.
-                    <strong>dtools</strong> مجموعه‌ای از ابزارهای کاربردی برای برنامه‌نویسان، طراحان و کاربران عمومی ارائه می‌دهد. همین حالا ابزار تولید QR Code را امتحان کنید و اطلاعات خود را به‌سرعت به اشتراک بگذارید!
+                    <strong>ابزار محاسبه‌گر اقساط خرید dtools</strong> راه‌حلی سریع و کارآمد برای کاربرانی است که می‌خواهند اقساط خرید خود را محاسبه کنند. این ابزار برای خریداران، برنامه‌ریزان مالی و کسب‌وکارها ایده‌آل است.
+                    با <strong>ابزار محاسبه اقساط آنلاین</strong>، می‌توانید مبلغ خرید، نرخ سود و مدت زمان بازپرداخت را وارد کنید و به‌راحتی میزان اقساط ماهانه را محاسبه کنید. این ابزار نیازی به نصب ندارد و مستقیماً در مرورگر شما کار می‌کند.
+                    <strong>چرا ابزار محاسبه‌گر اقساط dtools؟</strong> این ابزار با رابط کاربری ساده، دقت بالا و امکان محاسبه سریع، تجربه‌ای بی‌نقص ارائه می‌دهد. چه برای خرید لوازم خانگی، خودرو یا هر نوع خرید قسطی دیگر باشد، dtools کار شما را آسان می‌کند.
+                    <strong>dtools</strong> مجموعه‌ای از ابزارهای کاربردی برای برنامه‌ریزان مالی، خریداران و کاربران عمومی ارائه می‌دهد. همین حالا ابزار محاسبه‌گر اقساط خرید را امتحان کنید و برنامه‌ریزی مالی خود را بهبود دهید!
                 </>
             }
         >
-            <InstallmentPurchaseCalculator/>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}}/>
+            <InstallmentPurchaseCalculator />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd)}} />
         </SingleStructures>
     );
 };
