@@ -52,7 +52,6 @@ const ConvertArrayToJson = () => {
     const [jsonOutput, setJsonOutput] = useState("");
     const [error, setError] = useState("");
     const [inputType, setInputType] = useState("javascript"); // نوع ورودی: javascript, php, python
-
     const handleConvert = () => {
         if (!input.trim()) {
             setError("لطفاً یک ورودی وارد کنید!");
@@ -76,7 +75,6 @@ const ConvertArrayToJson = () => {
             setJsonOutput("");
         }
     };
-
     const handleCopy = () => {
         if (jsonOutput) {
             navigator.clipboard.writeText(jsonOutput).then(() => {
@@ -88,9 +86,8 @@ const ConvertArrayToJson = () => {
     };
 
     return (
-        <div className="flex flex-col gap-5 justify-center w-full items-center p-6">
-            <div className="flex flex-col gap-4 w-full">
-
+        <div className="flex flex-col gap-5 justify-center w-full items-center">
+            <div className="flex flex-col gap-7 w-full">
                 <div className="flex flex-col gap-2">
                     <label className="">نوع ورودی</label>
                     <div className="flex flex-row">
@@ -118,8 +115,7 @@ const ConvertArrayToJson = () => {
                         </button>
                     </div>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10 md:gap-5">
                    <div className="flex flex-col gap-2">
                        <label htmlFor="2" className="">آرایه یا شیء ورودی</label>
                        <textarea id="2" dir="ltr" value={input} onChange={(e) => setInput(e.target.value)} rows="10"
@@ -130,7 +126,6 @@ const ConvertArrayToJson = () => {
                            className="border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700"
                        />
                    </div>
-
                    <div className="flex flex-col gap-2 relative">
                        <div className="flex flex-row justify-between items-center">
                            <label className="flex flex-row gap-1" htmlFor="textArea">

@@ -40,7 +40,7 @@ const QrCodeGenerator = () => {
 
     return (
         <div className="flex flex-col gap-5 justify-center w-full items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10 md:gap-5">
                 <div className="flex flex-col gap-3 relative justify-center items-center w-full">
                     <div ref={qrRef}>
                         <QRCode value={textOne} size={220} fgColor={valueFgColor} bgColor={valueBgColor}  />

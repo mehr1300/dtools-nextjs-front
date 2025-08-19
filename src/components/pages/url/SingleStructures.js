@@ -5,8 +5,8 @@ import {Kalameh} from "@/app/layout";
 const SingleStructures = ({title,abstract,desc,image,children,descTag = false}) => {
     return (
         <div className="min-h-[100svh] bg-gradient-to-b from-sky-50 to-white">
-            <div className="flex flex-col gap-14 p-10 max-w-screen-xl w-full mx-auto">
-                <div className={`text_icon`}>
+            <div className="flex flex-col gap-8 md:gap-14 p-5 md:p-10 max-w-screen-xl w-full mx-auto">
+                <div className={`flex flex-col md:flex-row gap-1.5 md:items-center`}>
                     <Image unoptimized={true} width={60} height={60} src={image} alt={title}/>
                     <div className={`flex flex-col gap-1.5`}>
                         <h1 className={`${Kalameh.className} text-gray-800 text-2xl font-bold`}>{title}</h1>
@@ -14,7 +14,7 @@ const SingleStructures = ({title,abstract,desc,image,children,descTag = false}) 
                     </div>
                 </div>
                 {children}
-                <div className="flex flex-col gap-4 border-t pt-10 border-gray-300">
+                <div className="flex flex-col gap-4 border-t py-10 md:pb-0 border-gray-300">
                     <h2 className="font-bold text-justify">{title}</h2>
                     {descTag
                         ?<div className="text-justify leading-8 text-gray-700">{desc}</div>

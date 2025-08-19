@@ -23,8 +23,8 @@ const ConvertArabicCharactersToPersian = () => {
     };
 
     return (
-        <div className="flex flex-col gap-5 justify-center w-full items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5">
+        <div className="flex flex-col gap-10 md:gap-5 justify-center w-full items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10 md:gap-5">
                 <div className="flex flex-col gap-3">
                     <label className="flex flex-row gap-1" htmlFor="textOne">
                         <span>متن را وارد کنید</span>

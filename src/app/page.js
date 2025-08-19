@@ -28,9 +28,9 @@ const Page = () => {
 
     return (
         <div className="flex flex-col">
-            <div className={`flex flex-col bg-gradient-to-b from-gray-50 to-sky-50 pt-20 pb-25 gap-32`}>
+            <div className={`flex flex-col bg-gradient-to-b from-gray-50 to-sky-50 pt-12 lg:pt-20 pb-18 lg:pb-25 gap-10 lg:gap-32`}>
                 <IndexHead/>
-                <div className={`flex flex-row justify-center gap-6 max-w-screen-xl mx-auto w-full`}>
+                <div className={`flex flex-wrap items-center justify-center gap-6 px-5 max-w-screen-xl mx-auto w-full`}>
                     {indexHead.map((value,index)=>{
                         return (
                             <div key={index} className={`flex flex-col border border-gray-200 rounded-xl`}>
@@ -61,8 +61,8 @@ const Page = () => {
                     })}
                 </div>
             </div>
-            <div className={`bg-white rounded-t-3xl pb-30 -mt-5 pt-20 px-10`}>
-                <div className={`mx-auto max-w-screen-xl w-full flex flex-col gap-12`}>
+            <div className={`bg-white rounded-t-3xl pb-30 -mt-5 pt-20 px-5 lg:px-10`}>
+                <div className={`mx-auto max-w-screen-xl w-full flex flex-col gap-7 lg:gap-12`}>
                     <div className={`flex flex-col text-center gap-5`}>
                         <h3 className={`${Kalameh.className} text-2xl font-bold text-gray-800`}>ابزارهای محبوب Dtools</h3>
                         <p className={`text-gray-500`}>در Dtools از بهترین ابزارها به راحتی و رایگان استفاده کنید.</p>

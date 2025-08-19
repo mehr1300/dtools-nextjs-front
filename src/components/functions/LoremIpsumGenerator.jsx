@@ -72,16 +72,15 @@ const generateRandomText = (language, type, count) => {
 };
 
 const LoremIpsumGenerator = () => {
+
     const [language, setLanguage] = useState("persian");
     const [type, setType] = useState("paragraph");
     const [count, setCount] = useState(5);
     const [generatedText, setGeneratedText] = useState("");
-
     const handleGenerate = () => {
         const text = generateRandomText(language, type, count);
         setGeneratedText(text);
     };
-
     const handleCopy = () => {
         navigator.clipboard.writeText(generatedText).then(() => {
             Toast.success("متن با موفقیت کپی شد!")
@@ -91,66 +90,57 @@ const LoremIpsumGenerator = () => {
     };
 
     return (
-        <div className="flex flex-col gap-5 justify-center w-full items-center p-6">
-            <div className="flex flex-col gap-4 w-full  ">
-                <div className="flex flex-col gap-2">
-                    <div className="flex flex-row">
-                        <button onClick={() => setLanguage("persian")} className={`py-2 w-28 rounded-r-xl cursor-pointer h-10 ${
-                                language === "persian" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
-                            }`}>
-                            فارسی
-                        </button>
-                        <button onClick={() => setLanguage("arabic")} className={`py-2 w-28  text-gray-100 cursor-pointer h-10 ${
-                                language === "arabic" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
-                            }`}>
-                            عربی
-                        </button>
-                        <button onClick={() => setLanguage("english")}
-                            className={`py-2 w-28 rounded-l-xl text-gray-100 cursor-pointer h-10 ${
-                                language === "english" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
-                            }`}>
-                            انگلیسی
-                        </button>
-                    </div>
+        <div className="flex flex-col gap-5 justify-center w-full items-center">
+            <div className="flex flex-col gap-4 w-full">
+                <div className="flex flex-row">
+                    <button onClick={() => setLanguage("persian")} className={`py-2 w-28 rounded-r-xl cursor-pointer h-10 ${
+                            language === "persian" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
+                        }`}>
+                        فارسی
+                    </button>
+                    <button onClick={() => setLanguage("arabic")} className={`py-2 w-28  text-gray-100 cursor-pointer h-10 ${
+                            language === "arabic" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
+                        }`}>
+                        عربی
+                    </button>
+                    <button onClick={() => setLanguage("english")}
+                        className={`py-2 w-28 rounded-l-xl text-gray-100 cursor-pointer h-10 ${
+                            language === "english" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
+                        }`}>
+                        انگلیسی
+                    </button>
                 </div>
-
-
-               <div className="flex flex-row gap-2">
-                   <div className="flex flex-col gap-2">
-                       <div className="flex flex-row">
-                           <button onClick={() => setType("word")} className={`py-2 w-28 rounded-r-xl text-gray-100 cursor-pointer h-10 ${
-                                   type === "word" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
-                               }`}>
-                               کلمه
-                           </button>
-                           <button onClick={() => setType("sentence")} className={`py-2 w-28   text-gray-100 cursor-pointer h-10 ${
-                                   type === "sentence" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
-                               }`}>
-                               جمله
-                           </button>
-                           <button onClick={() => setType("paragraph")} className={`py-2 w-28 rounded-l-xl text-gray-100 cursor-pointer h-10 ${
-                                   type === "paragraph" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
-                               }`}>
-                               پاراگراف
-                           </button>
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-2">
+                    <div className="flex flex-row">
+                       <button onClick={() => setType("word")} className={`py-2 w-28 rounded-r-xl text-gray-100 cursor-pointer h-10 ${
+                               type === "word" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
+                           }`}>
+                           کلمه
+                       </button>
+                       <button onClick={() => setType("sentence")} className={`py-2 w-28   text-gray-100 cursor-pointer h-10 ${
+                               type === "sentence" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
+                           }`}>
+                           جمله
+                       </button>
+                       <button onClick={() => setType("paragraph")} className={`py-2 w-28 rounded-l-xl text-gray-100 cursor-pointer h-10 ${
+                               type === "paragraph" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
+                           }`}>
+                           پاراگراف
+                       </button>
+                   </div>
+                    <div className={`flex flex-row gap-2`}>
+                    <div className="flex flex-col gap-2">
+                           <input type="number" min="1" max="50" value={count} className=" w-40 border border-gray-300 rounded-lg p-2"
+                                  onChange={(e) => setCount(Math.max(1, parseInt(e.target.value) || 1))}
+                           />
                        </div>
+                       <button onClick={handleGenerate}
+                           className=" flex w-40 justify-center items-center py-2 rounded-xl bg-sky-400 hover:bg-sky-500 text-gray-100 cursor-pointer">
+                           تولید متن
+                       </button>
                    </div>
-
-
-                   <div className="flex flex-col gap-2">
-                       <input type="number" min="1" max="50" value={count} className=" w-40 border border-gray-200 rounded-lg p-2"
-                              onChange={(e) => setCount(Math.max(1, parseInt(e.target.value) || 1))}
-                       />
-                   </div>
-
-
-                   <button onClick={handleGenerate}
-                       className=" flex w-40 justify-center items-center py-2 rounded-xl bg-sky-400 hover:bg-sky-500 text-gray-100 cursor-pointer">
-                       تولید متن
-                   </button>
                </div>
-
-                <div className="flex flex-col gap-2 relative">
+                <div className="flex flex-col gap-2 mt-10 relative">
                     <div className="flex flex-row justify-between items-center">
                         <label className="flex flex-row gap-1" htmlFor="textArea">
                             <span>متن تولید‌شده</span>

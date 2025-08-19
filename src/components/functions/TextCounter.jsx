@@ -30,7 +30,7 @@ const TextCounter = () => {
                 </label>
                 <textarea id="textOne" value={textOne} onChange={(e) => {setTextOne(e.target.value)}} name="" cols="125" rows="10" className="border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700"></textarea>
             </div>
-            <div className=" flex flex-row gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
                 <div className="flex flex-col text-sm gap-1 justify-center items-center bg-sky-400 text-white px-2 py-2 rounded">
                     <span className="border-b border-gray-200 p-2">تعداد کارکتر + اسپیس</span>
                     <span className={`${IRANYekanFaNum.className} text-lg`}>{charCountWithSpaces}</span>

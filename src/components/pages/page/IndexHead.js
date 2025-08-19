@@ -19,10 +19,10 @@ const IndexHead = () => {
 
     return (
         <div className={`flex flex-col gap-20 max-w-screen-xl mx-auto w-full items-center justify-center`}>
-            <div className={`flex flex-col items-center justify-center gap-10`}>
-                <h1 className={` items-center font-bold text-gray-800 flex flex-row gap-1.5 text-5xl`}>
+            <div className={`flex flex-col items-center justify-center gap-14 lg:gap-10`}>
+                <h1 className={` items-center font-bold text-gray-800 flex flex-col lg:flex-row gap-6 lg:gap-1.5 text-3xl lg:text-5xl`}>
                     <span>ابزارهای رایگان برای</span>
-                    <span className={`flex flex-col relative h-20 w-130 overflow-hidden`}>
+                    <span className={`flex flex-col relative h-17 lg:h-20 w-85 lg:w-130 overflow-hidden`}>
                         {indexHead.map((value, index) => {
                             if(number === index){
                                 a = 'translate-y-0 z-20'
@@ -46,12 +46,12 @@ const IndexHead = () => {
                                 }
                             }
                             return (
-                                <span key={index} className={` ${a} ${value.color1} absolute anime_hover duration-500 w-130 text-center text-white/90 px-3 py-4`}>{value.title}</span>
+                                <span key={index} className={` ${a} ${value.color1} absolute anime_hover duration-500 w-85 lg:w-130 text-center text-white/90 px-3 py-4`}>{value.title}</span>
                             )
                         })}
                     </span>
                 </h1>
-                <h2 className={` items-center flex flex-row gap-1.5 text-gray-500`}>
+                <h2 className={` items-center flex flex-col lg:flex-row gap-2.5 lg:gap-1.5 text-gray-500`}>
                     <span>در Dtools به سادگی</span>
                     <span className={`flex flex-col relative h-10 w-65 overflow-hidden`}>
                         {indexHead.map((value, index) => {
@@ -81,7 +81,7 @@ const IndexHead = () => {
                             )
                         })}
                     </span>
-                    <span>همه‌چیز رایگان، سریع، با کیفیت و حرفه‌ای در دسترس شماست.</span>
+                    <span className={`lg:p-0 px-5 text-center leading-7`}>همه‌چیز رایگان، سریع، با کیفیت و حرفه‌ای در دسترس شماست.</span>
                 </h2>
             </div>
         </div>

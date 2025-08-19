@@ -8,7 +8,6 @@ const DecodeEncode = () => {
 
     const [textOne, setTextOne] = useState("")
     const [textTwo, setTextTwo] = useState("")
-
     const onSubmit = (input) => {
         if (input === "decode") {
             setTextTwo(decodeURIComponent(textOne))
@@ -17,7 +16,6 @@ const DecodeEncode = () => {
             setTextTwo(encodeURIComponent(textOne))
         }
     }
-
     const copyToClipboard = async () => {
         try {
             const textarea = document.querySelector('#textArea');
@@ -31,7 +29,13 @@ const DecodeEncode = () => {
 
     return (
         <div className="flex flex-col gap-5 justify-center w-full items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10 md:gap-5">
+                <div className="flex flex-col gap-3">
+                    <label className="flex flex-row gap-1" htmlFor="textOne">
+                        <span>متن را وارد کنید</span>
+                    </label>
+                    <textarea dir="ltr" id="textOne" value={textOne} onChange={(e) => {setTextOne(e.target.value)}} name=""  cols="60" rows="10" className="border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700"></textarea>
+                </div>
                 <div className="flex flex-col relative gap-3">
                     <div className="flex flex-row justify-between items-center">
                         <label className="flex flex-row gap-1" htmlFor="textArea">
@@ -43,14 +47,6 @@ const DecodeEncode = () => {
                     </div>
                     <textarea dir="ltr" value={textTwo} readOnly name="" id="textArea" cols="60" rows="10" className="border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700"></textarea>
                 </div>
-
-                <div className="flex flex-col gap-3">
-                    <label className="flex flex-row gap-1" htmlFor="textOne">
-                        <span>متن را وارد کنید</span>
-                    </label>
-                    <textarea dir="ltr" id="textOne" value={textOne} onChange={(e) => {setTextOne(e.target.value)}} name=""  cols="60" rows="10" className="border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700"></textarea>
-                </div>
-
             </div>
             <div className="flex flex-row gap-3">
                 <div onClick={() => {onSubmit('decode')}} className="flex flex-row justify-center items-center p-3 w-40 rounded-xl bg-sky-400 hover:bg-sky-500 anime_hover text-gray-100 cursor-pointer ">Decode</div>
