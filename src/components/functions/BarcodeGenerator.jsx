@@ -3,12 +3,12 @@ import React, {useRef, useState} from 'react';
 import Barcode from 'react-barcode';
 
 const BarcodeGenerator = () => {
+
     const [inputValue, setInputValue] = useState('');
     const [barcodeFormat, setBarcodeFormat] = useState('CODE128');
     const [barcodes, setBarcodes] = useState([]);
     const [error, setError] = useState('');
     const barcodeRefs = useRef([]);
-
     // لیست فرمت‌های معتبر با نام نمایشی
     const formats = [
         {id: 'CODE128', name: 'CODE128', pattern: /^[\x00-\x7F]+$/},
@@ -19,7 +19,6 @@ const BarcodeGenerator = () => {
         {id: 'codabar', name: 'Codabar', pattern: /^[A-Da-d][0-9\-\$\:\.\/\+]+[A-Da-d]$/},
         {id: 'EAN13', name: 'GS1-128 (EAN13)', pattern: /^\d{12,13}$/},
     ];
-
     const generateBarcodes = () => {
         if (!inputValue.trim()) {
             setError('لطفا مقادیر را وارد کنید');
@@ -51,12 +50,10 @@ const BarcodeGenerator = () => {
         barcodeRefs.current = newBarcodes.map((barcode, index) => barcodeRefs.current[index] ?? React.createRef());
         setBarcodes(newBarcodes);
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         generateBarcodes();
     };
-
     // تابع برای دانلود بارکد به عنوان PNG
     const downloadBarcode = (index) => {
         if (barcodeRefs.current[index] && barcodeRefs.current[index].current) {
@@ -100,10 +97,10 @@ const BarcodeGenerator = () => {
                                     {formats.map((format) => (
                                         <div key={format.id} className={`flex items-center p-2 rounded-lg cursor-pointer border-2 ${
                                             barcodeFormat === format.id
-                                                ? 'border-indigo-600 bg-indigo-50'
-                                                : 'border-gray-200 hover:border-indigo-300'
+                                                ? 'border-sky-500 bg-sky-50'
+                                                : 'border-gray-200 hover:border-sky-300'
                                         }`} onClick={() => setBarcodeFormat(format.id)}>
-                                            <input id={format.id} name="barcode-format" type="radio" checked={barcodeFormat === format.id} onChange={() => setBarcodeFormat(format.id)} className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300"/>
+                                            <input id={format.id} name="barcode-format" type="radio" checked={barcodeFormat === format.id} onChange={() => setBarcodeFormat(format.id)} className="h-4 w-4 text-sky-500 focus:ring-sky-500 border-gray-300"/>
                                             <label htmlFor={format.id} className="ml-2 block text-sm font-medium text-gray-700 cursor-pointer">
                                                 {format.name}
                                             </label>
@@ -118,7 +115,7 @@ const BarcodeGenerator = () => {
                                 </label>
                                 <p className="text-sm text-gray-500 mb-3">
                                     هر مقدار را در یک خط جدید وارد کنید </p>
-                                <textarea id="values" rows={6} value={inputValue} onChange={(e) => setInputValue(e.target.value)} className="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="123"/>
+                                <textarea id="values" rows={6} value={inputValue} onChange={(e) => setInputValue(e.target.value)} className="w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500" placeholder="123"/>
                             </div>
 
                             {error && (
@@ -131,7 +128,7 @@ const BarcodeGenerator = () => {
                                 <button type="button" onClick={() => setInputValue('')} className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
                                     پاک کردن
                                 </button>
-                                <button type="submit" className="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors shadow-md">
+                                <button type="submit" className="px-6 py-3 bg-sky-500 text-white font-medium rounded-lg hover:bg-sky-400 transition-colors shadow-md">
                                     تولید بارکد
                                 </button>
                             </div>

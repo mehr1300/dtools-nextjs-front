@@ -52,7 +52,7 @@ const SHAHashGenerator = () => {
 
     return (
         <div className="flex flex-col gap-5 justify-center w-full items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10 md:gap-5">
                 <div className="flex flex-col gap-3">
                     <label className="flex flex-row gap-1" htmlFor="textOne">
                         <span>متن را وارد کنید</span>
@@ -71,7 +71,7 @@ const SHAHashGenerator = () => {
                     <textarea value={textTwo} readOnly name="" id="textArea" cols="60" rows="10" className="border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700"></textarea>
                 </div>
             </div>
-            <div className="flex flex-row gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
                 <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha1" ? "bg-sky-500 text-white" : "border-2 border-sky-500"}`} onClick={() => setSelector("sha1")}>
                     <span>SHA-1</span>
                 </div>
