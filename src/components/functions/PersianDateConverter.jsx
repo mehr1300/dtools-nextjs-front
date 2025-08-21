@@ -29,16 +29,16 @@ const PersianDateConverter = () => {
 
     return (
         <div className="flex flex-col gap-12 justify-center w-full items-center">
-            <div className="flex flex-col md:flex-row justify-center w-full items-center gap-4 md:gap-3">
+            <div className="flex flex-col md:flex-row justify-center w-full items-center gap-6 md:gap-3">
                 <div className="relative">
-                    <label htmlFor="" className="absolute text-xs   text-gray-400 -top-2 right-2">نوع تبدیل</label>
+                    <label className="absolute text-xs text-gray-400 -top-2 right-2">نوع تبدیل</label>
                     <select onChange={(e)=>{setSelectType(e.target.value)}} name="" id="" className="border border-gray-200 bg-white outline-sky-200 rounded-lg p-3 text-gray-700">
                         <option value="jalali">تبدیل شمسی به میلادی و قمری</option>
                         <option value="gregorian">تبدیل میلادی به شمسی و قمری</option>
                         <option value="hijri">تبدیل قمری به شمسی و میلادی</option>
                     </select>
                 </div>
-                <div className={`flex flex-row gap-3`}>
+                <div className={`flex flex-row gap-1.5 sm:gap-3`}>
                     <div className="relative">
                     <label htmlFor="" className="absolute text-xs   text-gray-400 -top-2 right-2">روز</label>
                     <select onChange={(e)=>{setSelectDay(e.target.value)}} name="" id="" className={`border border-gray-200 bg-white outline-sky-200 rounded-lg p-3 text-gray-700 ${Kalameh.className}`}>
