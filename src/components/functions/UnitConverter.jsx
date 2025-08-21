@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import {Kalameh} from "@/app/layout";
 
 const UnitConverter = () => {
     // دسته‌بندی‌های مختلف
@@ -196,162 +197,145 @@ const UnitConverter = () => {
     }, [inputValue, fromUnit, toUnit, selectedCategory]);
 
     return (
-        <div className=" py-8 px-4 sm:px-6">
-            <div className="max-w-4xl mx-auto">
+        <div className="max-w-screen-xl mx-auto">
+            <div className="mb-8">
+                <div className="">
+                    {/* دسته‌بندی‌ها */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => handleCategoryChange(category)}
+                                className={`px-4 py-2 rounded-lg  transition-all ${
+                                    selectedCategory === category
+                                        ? 'bg-sky-400 border border-sky-500 text-white cursor-pointer'
+                                        : 'bg-white border border-gray-200 cursor-pointer text-gray-700 hover:bg-gray-300'
+                                }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
 
-                <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
-                    <div className="p-6">
-                        {/* دسته‌بندی‌ها */}
-                        <div className="flex flex-wrap gap-2 mb-6">
-                            {categories.map((category) => (
-                                <button
-                                    key={category}
-                                    onClick={() => handleCategoryChange(category)}
-                                    className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                                        selectedCategory === category
-                                            ? 'bg-sky-600 text-white shadow-md'
-                                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                    }`}
-                                >
-                                    {category}
-                                </button>
-                            ))}
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div className="space-y-2">
+                            <label className="block ">از واحد:</label>
+                            <select value={fromUnit} onChange={(e) => setFromUnit(e.target.value)}
+                                className="w-full px-4 py-3 border border-gray-200 bg-white rounded-xl outline-sky-300">
+                                {units[selectedCategory].map((unit) => (
+                                    <option key={unit.name} value={unit.name}>
+                                        {unit.name}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
 
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                            <div className="space-y-2">
-                                <label className="block text-sky-800 font-medium">از واحد:</label>
-                                <select value={fromUnit} onChange={(e) => setFromUnit(e.target.value)}
-                                    className="w-full px-4 py-3 border border-sky-300 rounded-xl outline-sky-400">
-                                    {units[selectedCategory].map((unit) => (
-                                        <option key={unit.name} value={unit.name}>
-                                            {unit.name}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-
-                            <div className="flex items-center justify-center">
-                                <button onClick={swapUnits}
-                                    className="cursor-pointer p-3 bg-sky-100 text-sky-700 rounded-full hover:bg-sky-200 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <div className="space-y-2"><label className="block text-sky-800 font-medium">به واحد:</label>
-                                <select value={toUnit} onChange={(e) => setToUnit(e.target.value)}
-                                    className="w-full px-4 py-3 border border-sky-300 rounded-xl outline-sky-400">
-                                    {units[selectedCategory].map((unit) => (
-                                        <option key={unit.name} value={unit.name}>
-                                            {unit.name}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
+                        <div className="flex items-center justify-center">
+                            <button onClick={swapUnits}
+                                className="cursor-pointer p-3 bg-sky-200/70 text-sky-400 rounded-full hover:bg-sky-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                </svg>
+                            </button>
                         </div>
 
-                        {/* فیلدهای ورودی و خروجی */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="space-y-2">
-                                <label className="block text-sky-800 font-medium">مقدار ورودی:</label>
-                                <input
-                                    type="text"
-                                    value={inputValue}
-                                    onChange={(e) => setInputValue(e.target.value)}
-                                    className="w-full px-4 py-3 border border-sky-300 rounded-xl outline-sky-400 text-lg"
-                                    placeholder="مقدار را وارد کنید"
-                                />
-                            </div>
+                        <div className="space-y-2"><label className="block ">به واحد:</label>
+                            <select value={toUnit} onChange={(e) => setToUnit(e.target.value)}
+                                className="w-full px-4 py-3 border border-gray-200 bg-white rounded-xl outline-sky-300">
+                                {units[selectedCategory].map((unit) => (
+                                    <option key={unit.name} value={unit.name}>
+                                        {unit.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
 
-                            <div className="space-y-2">
-                                <label className="block text-sky-800 font-medium">نتیجه تبدیل:</label>
-                                <div className="w-full px-4 py-3 bg-sky-50 border border-sky-300 rounded-xl text-lg text-sky-800 min-h-[56px] flex items-center">
-                                    {outputValue || '--'}
-                                </div>
-                            </div>
+                    {/* فیلدهای ورودی و خروجی */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                            <label className="block ">مقدار ورودی:</label>
+                            <input
+                                type="text"
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                                className="w-full px-4 py-3 border border-gray-200 bg-white rounded-xl outline-sky-300 text-lg"
+                                placeholder="مقدار را وارد کنید"
+                            />
                         </div>
 
-                        {/* اطلاعات تبدیل */}
-                        <div className="mt-6 p-4 bg-sky-50 rounded-xl border border-sky-200">
-                            <h3 className="font-bold text-sky-800 mb-2">اطلاعات تبدیل:</h3>
-                            <p className="text-sky-700">
-                                1 {fromUnit} = {formatNumber(
-                                units[selectedCategory].find(u => u.name === fromUnit).factor /
-                                units[selectedCategory].find(u => u.name === toUnit).factor
-                            )} {toUnit}
-                            </p>
-                            <p className="text-sky-700 mt-1">
-                                1 {toUnit} = {formatNumber(
-                                units[selectedCategory].find(u => u.name === toUnit).factor /
-                                units[selectedCategory].find(u => u.name === fromUnit).factor
-                            )} {fromUnit}
-                            </p>
+                        <div className="space-y-2">
+                            <label className="block ">نتیجه تبدیل:</label>
+                            <div className="w-full px-4 py-3 border border-gray-200 bg-white rounded-xl text-lg min-h-[56px] flex items-center">
+                                {outputValue || '--'}
+                            </div>
                         </div>
+                    </div>
+
+                    {/* اطلاعات تبدیل */}
+                    <div className="mt-6 p-4 bg-white rounded-xl border border-gray-200">
+                        <h3 className=" mb-2">اطلاعات تبدیل:</h3>
+                        <p className={`text-sky-500 ${Kalameh.className}`}>
+                            1 {fromUnit} = {formatNumber(
+                            units[selectedCategory].find(u => u.name === fromUnit).factor /
+                            units[selectedCategory].find(u => u.name === toUnit).factor
+                        )} {toUnit}
+                        </p>
+                        <p className={`text-sky-500 ${Kalameh.className} mt-1.5 `}>
+                            1 {toUnit} = {formatNumber(
+                            units[selectedCategory].find(u => u.name === toUnit).factor /
+                            units[selectedCategory].find(u => u.name === fromUnit).factor
+                        )} {fromUnit}
+                        </p>
                     </div>
                 </div>
+            </div>
 
-                {/* تبدیل‌های اخیر */}
-                {recentConversions.length > 0 && (
-                    <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
-                        <h2 className="text-xl font-bold text-sky-800 mb-4 flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            تبدیل‌های اخیر
-                        </h2>
-                        <div className="space-y-3">
-                            {recentConversions.map((conversion) => (
-                                <div key={conversion.id} className="flex items-center justify-between p-3 bg-sky-50 rounded-lg border border-sky-200">
-                                    <div>
-                                        <span className="text-sky-700">{conversion.from}</span>
-                                        <span className="mx-2 text-sky-500">→</span>
-                                        <span className="text-sky-700 font-medium">{conversion.to}</span>
-                                    </div>
-                                    <div className="text-sm text-sky-600">
-                                        <span>{conversion.category}</span>
-                                        <span className="mx-2">•</span>
-                                        <span>{conversion.timestamp}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-
-                {/* راهنمای استفاده */}
-                <div className="bg-white rounded-2xl shadow-xl p-6">
-                    <h2 className="text-xl font-bold text-sky-800 mb-4 flex items-center">
+            {/* تبدیل‌های اخیر */}
+            {recentConversions.length > 0 && (
+                <div className="bg-white rounded-2xl shadow-xl p-6 mb-8">
+                    <h2 className="text-xl  mb-4 flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        راهنمای استفاده
+                        تبدیل‌های اخیر
                     </h2>
-                    <div className="space-y-4">
-                        <div>
-                            <h3 className="font-bold text-sky-800 mb-2">نحوه استفاده:</h3>
-                            <ol className="list-decimal list-inside text-sky-700 space-y-1">
-                                <li>دسته‌بندی مورد نظر خود را انتخاب کنید (مثلاً طول، وزن، دما)</li>
-                                <li>واحد مبدا و مقصد را از لیست‌های کشویی انتخاب کنید</li>
-                                <li>مقداری که می‌خواهید تبدیل شود را در فیلد ورودی وارد کنید</li>
-                                <li>نتیجه به‌صورت خودکار در فیلد خروجی نمایش داده خواهد شد</li>
-                                <li>برای جابجایی واحدها می‌توانید از دکمه وسط استفاده کنید</li>
-                            </ol>
-                        </div>
-
-                        <div>
-                            <h3 className="font-bold text-sky-800 mb-2">نکات مهم:</h3>
-                            <ul className="list-disc list-inside text-sky-700 space-y-1">
-                                <li>برای تبدیل دما، واحدهای سلسیوس، فارنهایت و کلوین پشتیبانی می‌شوند</li>
-                                <li>در تبدیل واحدهای دیجیتال، هر بایت معادل 8 بیت در نظر گرفته شده است</li>
-                                <li>آخرین تبدیل‌های شما در بخش "تبدیل‌های اخیر" ذخیره می‌شود</li>
-                                <li>برای اعداد خیلی بزرگ یا خیلی کوچک، از نماد علمی استفاده می‌شود</li>
-                            </ul>
-                        </div>
+                    <div className="space-y-3">
+                        {recentConversions.map((conversion) => (
+                            <div key={conversion.id} className="flex items-center justify-between p-3 bg-sky-50 rounded-lg border border-sky-200">
+                                <div>
+                                    <span className="text-sky-700">{conversion.from}</span>
+                                    <span className="mx-2 text-sky-500">→</span>
+                                    <span className="text-sky-700 ">{conversion.to}</span>
+                                </div>
+                                <div className="text-sm text-sky-600">
+                                    <span>{conversion.category}</span>
+                                    <span className="mx-2">•</span>
+                                    <span>{conversion.timestamp}</span>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
+            )}
+
+            {/* راهنمای استفاده */}
+            <div className="border-t flex flex-col gap-4 border-gray-200 pt-6">
+                <h2 className="flex items-center text-gray-700 font-semibold">
+                    راهنمای استفاده
+                </h2>
+                <ul className="list-disc text-gray-500 text-sm space-y-4 px-5">
+                    <li>دسته‌بندی مورد نظر خود را انتخاب کنید.</li>
+                    <li>واحد مبدا و مقصد را از لیست‌های کشویی انتخاب کنید.</li>
+                    <li>مقداری که می‌خواهید تبدیل شود را در فیلد ورودی وارد کنید.</li>
+                    <li>نتیجه به‌صورت خودکار در فیلد خروجی نمایش داده خواهد شد.</li>
+                    <li>برای جابجایی واحدها می‌توانید از دکمه وسط استفاده کنید.</li>
+                    <li>برای تبدیل دما، واحدهای سلسیوس، فارنهایت و کلوین پشتیبانی می‌شوند.</li>
+                    <li>در تبدیل واحدهای دیجیتال، هر بایت معادل 8 بیت در نظر گرفته شده است.</li>
+                    <li>آخرین تبدیل‌های شما در بخش "تبدیل‌های اخیر" ذخیره می‌شود.</li>
+                    <li>برای اعداد خیلی بزرگ یا خیلی کوچک، از نماد علمی استفاده می‌شود.</li>
+                </ul>
             </div>
         </div>
     );
