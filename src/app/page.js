@@ -6,6 +6,8 @@ import IndexItems from "@/components/pages/page/IndexItems";
 import {GoArrowLeft} from "react-icons/go";
 import Link from "next/link";
 
+// gif color #75D8E7
+
 export const metadata = {
   title: "ابزارهای آنلاین برای نویسندگان، برنامه‌نویسان و سرگرمی | Dtools",
   description: "ابزارهای کاربردی برای نویسندگان، برنامه‌نویسان و کارهای روزمره. با Dtools به‌راحتی بنویسید، کدنویسی کنید و از سرگرمی‌های جذاب لذت ببرید!",

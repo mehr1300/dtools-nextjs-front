@@ -72,27 +72,27 @@ const SHAHashGenerator = () => {
                 </div>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
-                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha1" ? "bg-sky-500 text-white" : "border-2 border-sky-500"}`} onClick={() => setSelector("sha1")}>
+                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha1" ? "bg-sky-400 text-white" : "border-2 border-sky-400"}`} onClick={() => setSelector("sha1")}>
                     <span>SHA-1</span>
                 </div>
-                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha3" ? "bg-sky-500 text-white" : "border-2 border-sky-500"}`} onClick={() => setSelector("sha3")}>
+                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha3" ? "bg-sky-400 text-white" : "border-2 border-sky-400"}`} onClick={() => setSelector("sha3")}>
                     <span>SHA-3</span>
                 </div>
-                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha224" ? "bg-sky-500 text-white" : "border-2 border-sky-500"}`} onClick={() => setSelector("sha224")}>
+                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha224" ? "bg-sky-400 text-white" : "border-2 border-sky-400"}`} onClick={() => setSelector("sha224")}>
                     <span>SHA-224</span>
                 </div>
-                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha256" ? "bg-sky-500 text-white" : "border-2 border-sky-500"}`} onClick={() => setSelector("sha256")}>
+                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha256" ? "bg-sky-400 text-white" : "border-2 border-sky-400"}`} onClick={() => setSelector("sha256")}>
                     <span>SHA-256</span>
                 </div>
-                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha384" ? "bg-sky-500 text-white" : "border-2 border-sky-500"}`} onClick={() => setSelector("sha384")}>
+                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha384" ? "bg-sky-400 text-white" : "border-2 border-sky-400"}`} onClick={() => setSelector("sha384")}>
                     <span>SHA-384</span>
                 </div>
-                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha512" ? "bg-sky-500 text-white" : "border-2 border-sky-500"}`} onClick={() => setSelector("sha512")}>
+                <div className={`flex flex-row justify-center  px-5 pt-2 rounded cursor-pointer ${selector === "sha512" ? "bg-sky-400 text-white" : "border-2 border-sky-400"}`} onClick={() => setSelector("sha512")}>
                     <span>SHA-512</span>
                 </div>
 
             </div>
-            <div onClick={() => {onSubmit()}} className="flex flex-row justify-center items-center p-3 w-40 rounded-xl bg-sky-400 hover:bg-sky-500 anime_hover text-gray-100 cursor-pointer ">تبدیل</div>
+            <div onClick={() => {onSubmit()}} className="flex flex-row justify-center items-center p-3 w-40 rounded-xl bg-sky-400 hover:bg-sky-400 anime_hover text-gray-100 cursor-pointer ">تبدیل</div>
         </div>
     );
 };

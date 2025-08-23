@@ -1,6 +1,5 @@
 import React from 'react';
-import a from "../../../assets/images/gifs/coding.gif";
-import {IRANYekanFaNum} from "@/app/layout";
+import a from "../../../assets/images/gifs/password.gif";
 import SingleStructures from "@/components/pages/url/SingleStructures";
 import RandomPasswordGenerator from "@/components/functions/RandomPasswordGenerator";
 

@@ -97,13 +97,11 @@ const BarcodeGenerator = () => {
                                     {formats.map((format) => (
                                         <div key={format.id} className={`flex items-center p-2 rounded-lg cursor-pointer border-2 ${
                                             barcodeFormat === format.id
-                                                ? 'border-sky-500 bg-sky-50'
+                                                ? 'border-sky-300 bg-sky-50'
                                                 : 'border-gray-200 hover:border-sky-300'
                                         }`} onClick={() => setBarcodeFormat(format.id)}>
                                             <input id={format.id} name="barcode-format" type="radio" checked={barcodeFormat === format.id} onChange={() => setBarcodeFormat(format.id)} className="h-4 w-4 text-sky-500 focus:ring-sky-500 border-gray-300"/>
-                                            <label htmlFor={format.id} className="ml-2 block text-sm font-medium text-gray-700 cursor-pointer">
-                                                {format.name}
-                                            </label>
+                                            <label htmlFor={format.id} className="ml-2 block text-sm font-medium text-gray-700 cursor-pointer px-1"> {format.name} </label>
                                         </div>
                                     ))}
                                 </div>
@@ -128,7 +126,7 @@ const BarcodeGenerator = () => {
                                 <button type="button" onClick={() => setInputValue('')} className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
                                     پاک کردن
                                 </button>
-                                <button type="submit" className="px-6 py-3 bg-sky-500 text-white font-medium rounded-lg hover:bg-sky-400 transition-colors shadow-md">
+                                <button type="submit" className="px-6 py-3 bg-sky-400 text-white font-medium rounded-lg hover:bg-sky-500 transition-colors shadow-md">
                                     تولید بارکد
                                 </button>
                             </div>

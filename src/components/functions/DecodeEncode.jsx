@@ -1,6 +1,5 @@
 "use client"
 import React, {useState} from 'react';
-import {persianToArabic} from "@/utility/functions";
 import {LuCopy} from "react-icons/lu";
 import {Toast} from "@/components/section/toast/Toast";
 

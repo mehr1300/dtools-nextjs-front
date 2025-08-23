@@ -1,6 +1,5 @@
 import React from 'react';
-import a from "../../../assets/images/gifs/file.gif";
-import { IRANYekanFaNum } from "@/app/layout";
+import a from "../../../assets/images/gifs/binary-code.gif";
 import SingleStructures from "@/components/pages/url/SingleStructures";
 import SHAHashGenerator from "@/components/functions/SHAHashGenerator";
 

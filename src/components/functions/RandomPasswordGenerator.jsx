@@ -154,12 +154,12 @@ const RandomPasswordGenerator = () => {
 
                     {/* نمایش رمز */}
                     <div className="mb-6">
-                        <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+                        <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
                             <input
                                 type="text"
                                 value={password}
                                 readOnly
-                                className="flex-grow p-3 px-5 outline-none text-left direction-ltr"
+                                className="flex-grow p-3 px-5 outline-none bg-white text-left direction-ltr"
                             />
                             <div className="flex">
 
