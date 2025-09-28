@@ -451,3 +451,91 @@ export const dayList = [
         days: Array.from({length: 30}, (_, i) => i + 1)
     }
 ]
+
+export const dayListJalali = [
+    // Jalali Calendar (Persian)
+    {
+        id: 1,
+        type: "jalali",
+        month_id: 1,
+        month: "فروردین - ماه اول",
+        days: Array.from({length: 31}, (_, i) => i + 1)
+    },
+    {
+        id: 2,
+        type: "jalali",
+        month_id: 2,
+        month: "اردیبهشت - ماه دوم",
+        days: Array.from({length: 31}, (_, i) => i + 1)
+    },
+    {
+        id: 3,
+        type: "jalali",
+        month_id: 3,
+        month: "خرداد - ماه سوم",
+        days: Array.from({length: 31}, (_, i) => i + 1)
+    },
+    {
+        id: 4,
+        type: "jalali",
+        month_id: 4,
+        month: "تیر - ماه چهارم",
+        days: Array.from({length: 31}, (_, i) => i + 1)
+    },
+    {
+        id: 5,
+        type: "jalali",
+        month_id: 5,
+        month: "مرداد - ماه پنجم",
+        days: Array.from({length: 31}, (_, i) => i + 1)
+    },
+    {
+        id: 6,
+        type: "jalali",
+        month_id: 6,
+        month: "شهریور - ماه ششم",
+        days: Array.from({length: 31}, (_, i) => i + 1)
+    },
+    {
+        id: 7,
+        type: "jalali",
+        month_id: 7,
+        month: "مهر - ماه هفتم",
+        days: Array.from({length: 30}, (_, i) => i + 1)
+    },
+    {
+        id: 8,
+        type: "jalali",
+        month_id: 8,
+        month: "آبان - ماه هشتم",
+        days: Array.from({length: 30}, (_, i) => i + 1)
+    },
+    {
+        id: 9,
+        type: "jalali",
+        month_id: 9,
+        month: "آذر - ماه نهم",
+        days: Array.from({length: 30}, (_, i) => i + 1)
+    },
+    {
+        id: 10,
+        type: "jalali",
+        month_id: 10,
+        month: "دی - ماه دهم",
+        days: Array.from({length: 30}, (_, i) => i + 1)
+    },
+    {
+        id: 11,
+        type: "jalali",
+        month_id: 11,
+        month: "بهمن - ماه یازدهم",
+        days: Array.from({length: 30}, (_, i) => i + 1)
+    },
+    {
+        id: 12,
+        type: "jalali",
+        month_id: 12,
+        month: "اسفند - ماه دوازدهم",
+        days: Array.from({length: 30}, (_, i) => i + 1) // 29 days in non-leap years, 30 in leap years
+    }
+]

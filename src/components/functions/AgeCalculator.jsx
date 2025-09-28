@@ -2,7 +2,7 @@
 import React, { useState} from 'react';
 import {calculatorAge,getCurrentYear} from "@/utility/functions";
 import {Toast} from "@/components/section/toast/Toast";
-import {dayList} from "@/assets/data/DataList";
+import {dayList, dayListJalali} from "@/assets/data/DataList";
 import {Kalameh} from "@/app/layout";
 
 const AgeCalculator = () => {
@@ -39,7 +39,7 @@ const AgeCalculator = () => {
                     <div className="relative">
                         <label htmlFor="" className="absolute text-xs text-gray-400 -top-2 right-2">ماه</label>
                         <select onChange={(e)=>{setSelectMonth(e.target.value)}} name="" id="" className="w-52 border border-gray-200 bg-white outline-sky-200 rounded-lg p-3 text-gray-700">
-                            {dayList.map((item) => {
+                            {dayListJalali.map((item) => {
                                 return (
                                     <option key={item.month_id} value={item.month_id}>{item.month}</option>
                                 )
@@ -53,9 +53,9 @@ const AgeCalculator = () => {
                 </div>
                 <div onClick={() => {onSubmit("persian")}} className="flex flex-row justify-center items-center p-3 w-40 rounded-lg bg-sky-400 hover:bg-sky-500 anime_hover text-gray-100 cursor-pointer ">تبدیل</div>
             </div>
-            <div className="flex flex-col gap-5 lg:flex-row lg:gap-24">
+            <div className="grid grid-cols-3 gap-5 lg:flex-row lg:gap-14">
                 {data && data?.status === "success" && data.data.length > 0 && data.data.map((item,index) => (
-                    <div key={index} className="flex flex-col gap-2 justify-center border-b pb-2 px-10 border-gray-300 last:border-none items-center">
+                    <div key={index} className="flex flex-col gap-2 justify-center pb-2 px-10 border-gray-300 last:border-none items-center">
                         <span className="font-bold text-sky-500">{item.calendar}</span>
                         <span className="text-gray-600">{item.fullDate}</span>
                     </div>

@@ -468,25 +468,25 @@ export function calculatorAge({ year, month, day }) {
             {
                 calendar: 'سن به روز',
                 date: totalDays.toString(),
-                fullDate: `${totalDays} روز`
+                fullDate: `${addCommas(totalDays)} روز`
             },
             {
                 calendar: 'سن به ساعت',
                 date: totalHours.toString(),
-                fullDate: `${totalHours} ساعت`
+                fullDate: `${addCommas(totalHours)} ساعت`
             },
             {
                 calendar: 'سن به دقیقه',
                 date: totalMinutes.toString(),
-                fullDate: `${totalMinutes} دقیقه`
+                fullDate: `${addCommas(totalMinutes)} دقیقه`
             },
             {
                 calendar: 'سن به ثانیه',
                 date: totalSeconds.toString(),
-                fullDate: `${totalSeconds} ثانیه`
+                fullDate: `${addCommas(totalSeconds)} ثانیه`
             },
             {
-                calendar: 'روزهای باقی‌مانده تا تغییر سن',
+                calendar: 'چند روز تا تولد؟',
                 date: daysToNext.toString(),
                 fullDate: `${daysToNext} روز`
             }
