@@ -381,3 +381,116 @@ export function convertDate({ type, year, month, day }) {
         message : null,
     }
 }
+
+export function calculatorAge({ year, month, day }) {
+    if (!Number.isInteger(year) || year < 1) {
+        return {
+            status: "failed",
+            data: [],
+            message: "سال ارسالی صحیح نیست.",
+        }
+    }
+    if (!Number.isInteger(month) || month < 1 || month > 12) {
+        return {
+            status: "failed",
+            data: [],
+            message: "ماه ارسالی صحیح نیست.",
+        }
+    }
+    if (!Number.isInteger(day) || day < 1 || day > 31) {
+        return {
+            status: "failed",
+            data: [],
+            message: "روز ارسالی صحیح نیست.",
+        }
+    }
+
+    const birthJalali = momentJalaali(`${year}-${month}-${day}`, 'jYYYY-jMM-jDD');
+    if (!birthJalali.isValid()) {
+        return {
+            status: "failed",
+            data: [],
+            message: "خطا در محاسبه.",
+        }
+    }
+
+    const nowGreg = momentGregorian('2025-09-28', 'YYYY-MM-DD');
+    const nowJalali = momentJalaali(nowGreg);
+
+    if (birthJalali.isAfter(nowJalali)) {
+        return {
+            status: "failed",
+            data: [],
+            message: "تاریخ تولد نمی‌تواند بعد از تاریخ فعلی باشد.",
+        }
+    }
+
+    // محاسبه سن در سال‌های شمسی
+    let ageYears = nowJalali.jYear() - birthJalali.jYear();
+    const birthdayPassed = nowJalali.jMonth() > birthJalali.jMonth() ||
+        (nowJalali.jMonth() === birthJalali.jMonth() && nowJalali.jDate() >= birthJalali.jDate());
+    if (!birthdayPassed) {
+        ageYears--;
+    }
+
+    // آخرین تولد
+    const lastBirthdayYear = birthdayPassed ? nowJalali.jYear() : nowJalali.jYear() - 1;
+    const lastBirthday = birthJalali.clone().jYear(lastBirthdayYear);
+
+    // محاسبه ماه‌ها و روزها
+    let temp = lastBirthday.clone();
+    let ageMonths = 0;
+    while (temp.clone().add(1, 'jMonth') <= nowJalali) {
+        temp.add(1, 'jMonth');
+        ageMonths++;
+    }
+    const ageDays = nowJalali.diff(temp, 'days');
+
+    // محاسبه کل زمان‌ها
+    const totalSeconds = nowGreg.diff(birthJalali, 'seconds');
+    const totalMinutes = nowGreg.diff(birthJalali, 'minutes');
+    const totalHours = nowGreg.diff(birthJalali, 'hours');
+    const totalDays = nowGreg.diff(birthJalali, 'days');
+
+    // روزهای باقی‌مانده تا تولد بعدی
+    const nextBirthdayYear = birthdayPassed ? nowJalali.jYear() + 1 : nowJalali.jYear();
+    const nextBirthday = birthJalali.clone().jYear(nextBirthdayYear);
+    const daysToNext = nextBirthday.diff(nowJalali, 'days');
+
+    return {
+        status: "success",
+        data: [
+            {
+                calendar: 'سن عادی',
+                date: `${ageYears}/${ageMonths}/${ageDays}`,
+                fullDate: `${ageYears} سال ${ageMonths} ماه ${ageDays} روز`
+            },
+            {
+                calendar: 'سن به روز',
+                date: totalDays.toString(),
+                fullDate: `${totalDays} روز`
+            },
+            {
+                calendar: 'سن به ساعت',
+                date: totalHours.toString(),
+                fullDate: `${totalHours} ساعت`
+            },
+            {
+                calendar: 'سن به دقیقه',
+                date: totalMinutes.toString(),
+                fullDate: `${totalMinutes} دقیقه`
+            },
+            {
+                calendar: 'سن به ثانیه',
+                date: totalSeconds.toString(),
+                fullDate: `${totalSeconds} ثانیه`
+            },
+            {
+                calendar: 'روزهای باقی‌مانده تا تغییر سن',
+                date: daysToNext.toString(),
+                fullDate: `${daysToNext} روز`
+            }
+        ],
+        message: null,
+    }
+}

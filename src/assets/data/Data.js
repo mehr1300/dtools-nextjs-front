@@ -266,7 +266,7 @@ export const indexHead = [
             {
                 title : "محاسبه سن",
                 description : "محاسبه سال، ماه، هفته و روز | سن شما",
-                link : "/",
+                link : "/age-calculator",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
