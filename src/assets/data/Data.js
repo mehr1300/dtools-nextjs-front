@@ -7,6 +7,7 @@ import {RiCompassFill} from "react-icons/ri";
 export const indexHead = [
     {
         title : "ویرایش و پردازش متن",
+        link : "/edit-text",
         description : "متون خود را ویرایش و بهینه کنید.",
         hover : "hover:bg-emerald-600",
         border : "border-emerald-600",
@@ -36,7 +37,7 @@ export const indexHead = [
                 icon : <TbExchange className={` rotate-270 `} size={24}/>,
                 dropShadow : "drop-shadow-emerald-200",
             },
-             {
+            {
                 title : "تبدیل اعداد",
                 description : "تبدیل اعداد فارسی و انگلیسی و عربی",
                 link : "/number-transformer",
@@ -80,6 +81,7 @@ export const indexHead = [
     },
     {
         title : "توسعه دهندگان",
+        link : "/developers",
         description : "داده ها را بسازید و اصلاح کنید.",
         hover : "hover:bg-fuchsia-600",
         border : "border-fuchsia-600",
@@ -199,7 +201,7 @@ export const indexHead = [
                 icon : <BiLogoTailwindCss size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
-             {
+            {
                 title : "ویرایشگر (ادیتور) js آنلاین",
                 description : "js online editor",
                 link : "/js-online-editor",
@@ -224,6 +226,7 @@ export const indexHead = [
     },
     {
         title : "محاسبات روزمره",
+        link : "/daily-calculations",
         description : "آنلاین هرچیزی را محاسبه کنید.",
         hover : "hover:bg-cyan-600",
         border : "border-cyan-600",
@@ -236,7 +239,7 @@ export const indexHead = [
             {
                 title : "تقویم",
                 description : "تقویم و تاریخ رویدادها و وقایع مهم",
-                link : "/",
+                link : "",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -286,7 +289,7 @@ export const indexHead = [
             {
                 title : "محاسبه سود وام",
                 description : "محاسبه سود وام بانکی و تعداد اقساط",
-                link : "/",
+                link : "",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -303,20 +306,20 @@ export const indexHead = [
                 icon : <TbExchange size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
-             {
+            {
                 title : "یادداشت",
                 description : "تخته وایت برد آنلاین",
-                link : "/",
+                link : "",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
                 icon : <BiSolidNotepad size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
-             {
+            {
                 title : "محاسبه معدل",
                 description : "محاسبه معدل دانش آموزان و دانشجویان",
-                link : "/",
+                link : "",
                 color1 : "bg-cyan-500",
                 color2 : "bg-cyan-50",
                 textColor1 : "text-cyan-500",
@@ -327,6 +330,7 @@ export const indexHead = [
     },
     {
         title : "سرگرمی و بازی",
+        link : "/hobby",
         description : "از اوقات فراغت خود لذت ببرید.",
         hover : "hover:bg-amber-600",
         border : "border-amber-600",
@@ -339,7 +343,7 @@ export const indexHead = [
             {
                 title : "قرعه کشی",
                 description : "قرعه کشی تصادفی براساس تعداد نفرات",
-                link : "/",
+                link : "",
                 color1 : "bg-amber-500",
                 color2 : "bg-amber-50",
                 textColor1 : "text-amber-500",
@@ -350,7 +354,7 @@ export const indexHead = [
             {
                 title : "جاسوس",
                 description : "بازی جاسوس آنلاین براساس تعداد",
-                link : "/",
+                link : "",
                 color1 : "bg-amber-500",
                 color2 : "bg-red-50",
                 textColor1 : "text-red-500",
@@ -361,7 +365,7 @@ export const indexHead = [
             {
                 title : "اسم و فامیل",
                 description : "راهنمای بازی اسم و فامیل",
-                link : "/",
+                link : "",
                 color1 : "bg-amber-500",
                 color2 : "bg-blue-50",
                 textColor1 : "text-blue-500",
@@ -372,7 +376,7 @@ export const indexHead = [
             {
                 title : "پانتومیم",
                 description : "کلمات، جملات،ضرب المثل و ... برای بازی پانتومیم",
-                link : "/",
+                link : "",
                 color1 : "bg-amber-500",
                 color2 : "bg-green-50",
                 textColor1 : "text-green-500",
@@ -383,7 +387,7 @@ export const indexHead = [
             {
                 title : "شیر یا خط",
                 description : "شیر یا خط به صورت آنلاین",
-                link : "/",
+                link : "",
                 color1 : "bg-amber-500",
                 color2 : "bg-purple-50",
                 textColor1 : "text-purple-500",

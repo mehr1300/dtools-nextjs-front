@@ -9,9 +9,9 @@ import Link from "next/link";
 // gif color #75D8E7
 
 export const metadata = {
-  title: "ابزارهای آنلاین برای نویسندگان، برنامه‌نویسان و سرگرمی | Dtools",
-  description: "ابزارهای کاربردی برای نویسندگان، برنامه‌نویسان و کارهای روزمره. با Dtools به‌راحتی بنویسید، کدنویسی کنید و از سرگرمی‌های جذاب لذت ببرید!",
-  keywords: "ابزارهای آنلاین, ابزار نویسندگی, ابزار برنامه‌نویسی, سرگرمی آنلاین, بازی آنلاین, ابزارهای روزمره, Dtools"
+    title: "ابزارهای آنلاین برای نویسندگان، برنامه‌نویسان و سرگرمی | Dtools",
+    description: "ابزارهای کاربردی برای نویسندگان، برنامه‌نویسان و کارهای روزمره. با Dtools به‌راحتی بنویسید، کدنویسی کنید و از سرگرمی‌های جذاب لذت ببرید!",
+    keywords: "ابزارهای آنلاین, ابزار نویسندگی, ابزار برنامه‌نویسی, سرگرمی آنلاین, بازی آنلاین, ابزارهای روزمره, Dtools"
 };
 
 const Page = () => {
@@ -46,7 +46,7 @@ const Page = () => {
                                     </div>
                                     <div className={`text_icon justify-between`}>
                                         <div className={`flex flex-col gap-2.5`}>
-                                            <h3 className={`font-bold line-clamp-1 text-lg ${IRANYekanFaNum.className}`}>{value.title}</h3>
+                                            <Link href={value.link}><h3 className={`font-bold line-clamp-1 text-lg ${IRANYekanFaNum.className}`}>{value.title}</h3></Link>
                                             <h4 className={`text-sm line-clamp-1`}>{value.description}</h4>
                                         </div>
                                         <GoArrowLeft size={24}/>
@@ -55,7 +55,10 @@ const Page = () => {
                                 <div className={`bg-white rounded-b-xl h-16 py-3 px-4 w-70`}>
                                     <div className={` ${value.color3} text_icon justify-between px-5 rounded-xl size-full`}>
                                         <span className={`text-gray-500 flex-shrink-0 text-sm`}>ابزار ویژه :</span>
-                                        <Link href={value.item[0].link} className={` ${value.textColor} text-sm line-clamp-1`}>{value.item[0].title}</Link>
+                                        {value.item[0].link === ""
+                                            ?<div className={` ${value.textColor} text-sm line-clamp-1`}>{value.item[0].title}</div>
+                                            :<Link href={value.item[0].link} className={` ${value.textColor} text-sm line-clamp-1`}>{value.item[0].title}</Link>
+                                        }
                                     </div>
                                 </div>
                             </div>
