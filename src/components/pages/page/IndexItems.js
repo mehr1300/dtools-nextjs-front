@@ -20,9 +20,9 @@ const IndexItems = () => {
                     })}
                 </div>
             </div>
-            <div className={`max-w-screen-xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5`}>
-                {indexHead.map(item=>
-                    item.item.map((value,index)=>
+                {indexHead.map((item,index)=>
+                    <div key={index} className={`max-w-screen-xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10`}>
+                    {item.item.map((value,index)=>
                         value.link === ""
                             ?<div className={`bg-gray-50 border border-gray-200 rounded-xl p-4 flex flex-col gap-3`} key={index}>
                                 <div className={`text_icon items-start gap-2`}>
@@ -44,8 +44,10 @@ const IndexItems = () => {
                                 </div>
                                 <h5 className={`text-gray-400 h-10 line-clamp-2 overflow-hidden leading-5 text-xs`}>{value.description}</h5>
                             </Link>
-                ))}
-            </div>
+                    )}
+                    </div>
+
+                )}
         </div>
     );
 };
