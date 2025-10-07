@@ -326,6 +326,26 @@ export const indexHead = [
                 icon : <BiSolidCalculator size={24}/>,
                 dropShadow : "drop-shadow-cyan-200",
             },
+            {
+                title : "تبدیل فوت به متر",
+                description : "محاسبه و نحوه تبدیل فوت به متر",
+                link : "/foot-to-meter",
+                color1 : "bg-cyan-500",
+                color2 : "bg-cyan-50",
+                textColor1 : "text-cyan-500",
+                icon : <BiSolidCalculator size={24}/>,
+                dropShadow : "drop-shadow-cyan-200",
+            },
+            {
+                title : "تبدیل فوت به سانتیمتر",
+                description : "محاسبه و نحوه تبدیل فوت به سانتی متر",
+                link : "/foot-to-centimeter",
+                color1 : "bg-cyan-500",
+                color2 : "bg-cyan-50",
+                textColor1 : "text-cyan-500",
+                icon : <BiSolidCalculator size={24}/>,
+                dropShadow : "drop-shadow-cyan-200",
+            },
         ]
     },
     {
