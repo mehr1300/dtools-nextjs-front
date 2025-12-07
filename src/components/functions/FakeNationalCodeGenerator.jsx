@@ -35,7 +35,7 @@ const FakeNationalCodeGenerator = () => {
                     </div>
                 </div>
                 <div className="flex flex-row justify-center items-center w-80 border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700">
-                    <input id="data" readOnly type="text" value={value} className={`w-26 outline-none justify-center items-center ${Kalameh.className} text-lg font-semibold `}/>
+                    <input id="data" readOnly type="text" value={value} className={` outline-none justify-center items-center ${Kalameh.className} text-lg font-semibold text-center `}/>
                 </div>
             </div>
             <div onClick={() => {onSubmit()}} className="flex flex-row justify-center items-center p-3 w-40 rounded-xl bg-sky-400 hover:bg-sky-500 anime_hover text-gray-100 cursor-pointer ">تولید کد ملی</div>
