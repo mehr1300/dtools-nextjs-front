@@ -77,6 +77,16 @@ export const indexHead = [
                 icon : <BiSolidGrid size={30}/>,
                 dropShadow : "drop-shadow-emerald-200",
             },
+            {
+                title : "برعکس کننده",
+                description : "برعکس کننده کلمات فارسی برای جستجو در pdf",
+                link : "/reverse-pdf",
+                color1 : "bg-emerald-400",
+                color2 : "bg-emerald-50",
+                textColor1 : "text-emerald-500",
+                icon : <BiSolidGrid size={30}/>,
+                dropShadow : "drop-shadow-emerald-200",
+            },
         ]
     },
     {
