@@ -1,156 +1,175 @@
 "use client";
 import React, { useState } from "react";
-import {LuCopy} from "react-icons/lu";
-import {Toast} from "@/components/section/toast/Toast";
+import { LuCopy } from "react-icons/lu";
+import { Toast } from "@/components/section/toast/Toast";
+import CodeBlock from "@/components/pages/tools/CodeBlock";
 
-const parsePhpArray = (phpString) => {
-    try {
-        // حذف $variable = و سمی‌کالن‌ها
-        let cleanedString = phpString
-            .replace(/^\s*\$\w+\s*=\s*/, "") // حذف $variable =
-            .replace(/;\s*$/, "") // حذف سمی‌کالن انتهایی
-            .trim();
+/* ---------------- Utils ---------------- */
 
-        // تابع بازگشتی برای تبدیل آرایه PHP به فرمت JSON
-        const convertToJsonString = (str) => {
-            // جایگزینی => با : و افزودن نقل‌قول به کلیدها
-            str = str
-                .replace(/=>/g, ":")
-                .replace(/(\w+)\s*:/g, '"$1":')
-                .replace(/'([^']*)'/g, '"$1"'); // تبدیل تک‌نقل‌قول به دو نقل‌قول
+const normalizeInput = (str) =>
+    str.replace(/^\s*\$\w+\s*=\s*/, "").replace(/;\s*$/, "").trim();
 
-            // مدیریت آرایه‌های تو در تو
-            str = str.replace(/(\[\s*[^[\]]*\])/g, (match) => {
-                // اگر داخل کروشه‌ها آرایه یا شیء دیگری وجود داره، بازگشتی پردازش کن
-                const inner = match.slice(1, -1).trim();
-                if (inner.includes("=>") || inner.includes("[")) {
-                    return `[${convertToJsonString(inner)}]`;
-                }
-                return match;
-            });
+const convertPhpToJsonString = (str) => {
+    let s = normalizeInput(str)
+        .replace(/array\s*\(/g, "[")
+        .replace(/\)/g, "]")
+        .replace(/=>/g, ":")
+        .replace(/'([^']*)'/g, '"$1"')
+        .replace(/([{,]\s*)([A-Za-z0-9_]+)\s*:/g, '$1"$2":')
+        .replace(/,\s*([\]}])/g, "$1")
+        .trim();
 
-            return str;
-        };
-
-        // تبدیل رشته به JSON
-        cleanedString = convertToJsonString(cleanedString);
-
-        // اطمینان از اینکه رشته یک آرایه یا شیء است
-        if (!cleanedString.startsWith("[") && !cleanedString.startsWith("{")) {
-            cleanedString = `[${cleanedString}]`;
-        }
-
-        const parsed = JSON.parse(cleanedString);
-        return JSON.stringify(parsed, null, 2);
-    } catch (err) {
-        throw new Error("خطا در پارس آرایه PHP: فرمت نامعتبر");
+    // اگر key:value وجود داشت یعنی object است
+    if (/:\s*/.test(s)) {
+        if (s.startsWith("[")) s = "{" + s.slice(1);
+        if (s.endsWith("]")) s = s.slice(0, -1) + "}";
     }
+
+    return s;
 };
+
+const convertPythonToJsonString = (str) => {
+    return normalizeInput(str)
+        .replace(/\bNone\b/g, "null")
+        .replace(/\bTrue\b/g, "true")
+        .replace(/\bFalse\b/g, "false")
+        .replace(/'([^']*)'/g, '"$1"')
+        .replace(/,\s*([\]}])/g, "$1");
+};
+
+const convertJsLikeToJsonString = (str) => {
+    return normalizeInput(str)
+        .replace(/'([^']*)'/g, '"$1"')
+        .replace(/([{,]\s*)([A-Za-z0-9_]+)\s*:/g, '$1"$2":')
+        .replace(/,\s*([\]}])/g, "$1");
+};
+
+const parseInput = (input, type) => {
+    let jsonString;
+
+    if (type === "php") jsonString = convertPhpToJsonString(input);
+    else if (type === "python") jsonString = convertPythonToJsonString(input);
+    else jsonString = convertJsLikeToJsonString(input);
+
+    const parsed = JSON.parse(jsonString);
+    return JSON.stringify(parsed, null, 2);
+};
+
+/* ---------------- Component ---------------- */
 
 const ConvertArrayToJson = () => {
     const [input, setInput] = useState("");
     const [jsonOutput, setJsonOutput] = useState("");
     const [error, setError] = useState("");
-    const [inputType, setInputType] = useState("javascript"); // نوع ورودی: javascript, php, python
+    const [inputType, setInputType] = useState("javascript");
+
     const handleConvert = () => {
         if (!input.trim()) {
-            setError("لطفاً یک ورودی وارد کنید!");
+            setError("لطفاً یک ورودی وارد کنید");
             setJsonOutput("");
             return;
         }
 
         try {
-            let jsonString;
-            if (inputType === "php") {
-                jsonString = parsePhpArray(input);
-            } else {
-                // برای JavaScript و پایتون (فرمت‌های JSON معتبر)
-                const parsed = JSON.parse(input);
-                jsonString = JSON.stringify(parsed, null, 2);
-            }
-            setJsonOutput(jsonString);
+            const result = parseInput(input, inputType);
+            setJsonOutput(result);
             setError("");
-        } catch (err) {
-            setError(`خطا: لطفاً یک ${inputType === "php" ? "آرایه PHP" : inputType === "python" ? "لیست یا دیکشنری پایتون" : "آرایه یا شیء JavaScript"} معتبر وارد کنید`);
+        } catch {
             setJsonOutput("");
+            setError("فرمت ورودی معتبر نیست");
         }
     };
+
     const handleCopy = () => {
-        if (jsonOutput) {
-            navigator.clipboard.writeText(jsonOutput).then(() => {
-                Toast.success("متن با موفقیت کپی شد!")
-            }).catch((err) => {
-                Toast.error('کپی کردن متن ناموفق بود.')
-            });
-        }
+        if (!jsonOutput) return;
+
+        navigator.clipboard
+            .writeText(jsonOutput)
+            .then(() => Toast.success("کپی شد"))
+            .catch(() => Toast.error("خطا در کپی"));
     };
+
+    const buttonClass = (type) =>
+        `w-32 h-10 cursor-pointer ${
+            inputType === type
+                ? "bg-sky-600 text-white"
+                : "border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-white"
+        }`;
 
     return (
-        <div className="flex flex-col gap-5 justify-center w-full items-center">
-            <div className="flex flex-col gap-7 w-full">
-                <div className="flex flex-col gap-2">
-                    <label className="">نوع ورودی</label>
-                    <div className="flex flex-row">
-                        <button
-                            onClick={() => setInputType("javascript")}
-                            className={`w-32 rounded-r-xl text-gray-100 cursor-pointer h-10 ${
-                                inputType === "javascript" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
-                            }`}>
-                            JavaScript
-                        </button>
-                        <button
-                            onClick={() => setInputType("php")}
-                            className={`w-32  text-gray-100 cursor-pointer h-10 ${
-                                inputType === "php" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
-                            }`}>
-                            PHP
-                        </button>
-                        <button
-                            onClick={() => setInputType("python")}
-                            className={`w-32 rounded-l-xl text-gray-100 cursor-pointer h-10 ${
-                                inputType === "python" ? "bg-sky-600 text-gray-100" : "box-border border border-sky-400 text-sky-600 hover:bg-sky-400 hover:text-sky-700"
-                            }`}
-                        >
-                            پایتون
-                        </button>
-                    </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10 md:gap-5">
-                   <div className="flex flex-col gap-2">
-                       <label htmlFor="2" className="">آرایه یا شیء ورودی</label>
-                       <textarea id="2" dir="ltr" value={input} onChange={(e) => setInput(e.target.value)} rows="10"
-                           placeholder={inputType === "php" ? 'مثال: ["key" => "value", 1, 2]' : inputType === "python"
-                                       ? 'مثال: [1, 2, "text", {"key": "value"}]'
-                                       : 'مثال: [1, 2, "text", {"key": "value"}]'
-                           }
-                           className="border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700"
-                       />
-                   </div>
-                   <div className="flex flex-col gap-2 relative">
-                       <div className="flex flex-row justify-between items-center">
-                           <label className="flex flex-row gap-1" htmlFor="textArea">
-                               <span>خروجی JSON</span>
-                           </label>
-                           <div className={`rounded-xl cursor-pointer left-0 -top-5 text-blue-500 absolute size-10 bg-blue-200 flex items-center justify-center`}>
-                               <LuCopy onClick={handleCopy} size={21}/>
-                           </div>
-                       </div>
-                       <textarea id="textArea" dir="ltr" value={jsonOutput} readOnly rows="10" className="border border-gray-200 bg-white outline-sky-200 rounded-xl p-3 text-gray-700"/>
-                   </div>
-               </div>
-                <div className="flex flex-row w-full justify-center items-center">
-                    <button onClick={handleConvert} className="w-48 flex justify-center items-center p-3 rounded-xl bg-sky-400 hover:bg-sky-500 text-gray-100 cursor-pointer">
-                        تبدیل به JSON
+        <div className="flex flex-col gap-6 w-full items-center">
+
+            <div className="flex flex-col gap-2 w-full">
+                <label>نوع ورودی</label>
+
+                <div className="flex">
+                    <button
+                        onClick={() => setInputType("javascript")}
+                        className={`${buttonClass("javascript")} rounded-r-xl`}
+                    >
+                        JavaScript
+                    </button>
+
+                    <button
+                        onClick={() => setInputType("php")}
+                        className={buttonClass("php")}
+                    >
+                        PHP
+                    </button>
+
+                    <button
+                        onClick={() => setInputType("python")}
+                        className={`${buttonClass("python")} rounded-l-xl`}
+                    >
+                        پایتون
                     </button>
                 </div>
-
-                {error && (
-                    <div className="text-red-500 text-sm">{error}</div>
-                )}
-
-
-
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+
+                <div className="flex flex-col gap-2">
+                    <label>آرایه یا شیء ورودی</label>
+
+                    <textarea
+                        dir="ltr"
+                        rows="9"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        placeholder={
+                            inputType === "php"
+                                ? `[ 'amount' => "int", 'name' => "Ali" ]`
+                                : inputType === "python"
+                                    ? `[1,2,"text",{"name":"Ali"}]`
+                                    : `[1,2,"text",{name:"Ali"}]`
+                        }
+                        className="border border-gray-200 bg-white rounded-xl p-3 outline-sky-200"
+                    />
+                </div>
+
+                <div className="flex flex-col gap-2 relative">
+                    <label>خروجی JSON</label>
+
+                    <button
+                        onClick={handleCopy}
+                        className="absolute left-0 -top-5 size-10 flex items-center justify-center bg-blue-200 text-blue-500 rounded-xl"
+                    >
+                        <LuCopy size={20} />
+                    </button>
+
+                    <CodeBlock code={jsonOutput} language="json" />
+
+                </div>
+            </div>
+
+            <button
+                onClick={handleConvert}
+                className="w-48 p-3 rounded-xl bg-sky-400 hover:bg-sky-500 text-white"
+            >
+                تبدیل به JSON
+            </button>
+
+            {error && <div className="text-red-500 text-sm">{error}</div>}
         </div>
     );
 };

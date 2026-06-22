@@ -1,6 +1,32 @@
 import {TbExchange} from "react-icons/tb";
 import React from "react";
-import {BiCandles, BiCodeAlt, BiCodeBlock, BiLogoJavascript, BiLogoTailwindCss, BiMath, BiQrScan, BiSolidBarcode, BiSolidCalculator, BiSolidCalendarAlt, BiSolidCalendarEdit, BiSolidCreditCardFront, BiSolidDetail, BiSolidEdit, BiSolidEraser, BiSolidGame, BiSolidGrid, BiSolidIdCard, BiSolidJoystick, BiSolidLock, BiSolidNotepad, BiSolidShield, BiSolidUserDetail, BiSync} from "react-icons/bi";
+import {
+    BiCandles,
+    BiCodeAlt,
+    BiCodeBlock,
+    BiListOl,
+    BiLogoJavascript,
+    BiLogoTailwindCss,
+    BiMath,
+    BiQrScan,
+    BiSolidBarcode,
+    BiSolidCalculator,
+    BiSolidCalendarAlt,
+    BiSolidCalendarEdit,
+    BiSolidCreditCardFront,
+    BiSolidDetail,
+    BiSolidEdit,
+    BiSolidEraser,
+    BiSolidGame,
+    BiSolidGrid,
+    BiSolidIdCard,
+    BiSolidJoystick,
+    BiSolidLock,
+    BiSolidNotepad,
+    BiSolidShield,
+    BiSolidUserDetail,
+    BiSync
+} from "react-icons/bi";
 import {PiCoinVerticalFill} from "react-icons/pi";
 import {RiCompassFill} from "react-icons/ri";
 
@@ -229,6 +255,16 @@ export const indexHead = [
                 color2 : "bg-fuchsia-50",
                 textColor1 : "text-fuchsia-500",
                 icon : <BiSolidLock size={24}/>,
+                dropShadow : "drop-shadow-fuchsia-200",
+            },
+            {
+                title : "مقایسه دو لیست",
+                description : "تشخیص اشتراک و تفاوت بین دو لیست",
+                link : "/compare-two-lists",
+                color1 : "bg-fuchsia-700",
+                color2 : "bg-fuchsia-50",
+                textColor1 : "text-fuchsia-500",
+                icon : <BiListOl size={24}/>,
                 dropShadow : "drop-shadow-fuchsia-200",
             },
 
